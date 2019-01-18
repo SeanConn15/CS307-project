@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2019-01-17T12:51:36.904-05:00
-  initializedAtString: 2019-01-17T12:51:36.904-05:00
+  lastUpdatedAtString: 2019-01-18T15:25:50.256-05:00
+  initializedAtString: 2019-01-18T15:19:00.214-05:00
   currentGitRemote:
     name: origin
     url: https://github.com/SeanConn15/CS307-project.git
@@ -25,13 +25,13 @@ MonoBehaviour:
     token: 
   currentGitBranch:
     name: master
-    tracking: 
+    tracking: origin/master
   currentConfigBranch:
     name: master
     remote:
-      name: 
-      url: 
-    trackingBranch: 
+      name: origin
+      url: https://github.com/SeanConn15/CS307-project.git
+    trackingBranch: master
   currentConfigRemote:
     name: origin
     url: https://github.com/SeanConn15/CS307-project.git
