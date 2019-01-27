@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2019-01-18T15:22:58.871-05:00
-  initializedAtString: 2019-01-18T15:22:58.745-05:00
+  lastUpdatedAtString: 2019-01-27T16:22:09.755-05:00
+  initializedAtString: 2019-01-27T16:22:09.747-05:00
   localBranches:
   - name: master
     tracking: origin/master
   remoteBranches:
   - name: origin/HEAD
+    tracking: '[None]'
+  - name: origin/master
     tracking: '[None]'
   remotes:
   - name: origin
@@ -44,9 +46,15 @@ MonoBehaviour:
     subKeys:
     - Values:
       - HEAD
+      - master
     subKeyValues:
     - Values:
       - name: HEAD
+        remote:
+          name: origin
+          url: https://github.com/SeanConn15/CS307-project.git
+        trackingBranch: 
+      - name: master
         remote:
           name: origin
           url: https://github.com/SeanConn15/CS307-project.git
