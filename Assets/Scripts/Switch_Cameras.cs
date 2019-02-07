@@ -13,6 +13,7 @@ public class Switch_Cameras : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Always start at scene 1
         currentCamera = 0;
         for (int i = 0; i < cameraList.Length; i++)
         {
@@ -28,6 +29,7 @@ public class Switch_Cameras : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    if (currentCamera >= 0){
         // Right Arrow Key
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -37,18 +39,30 @@ public class Switch_Cameras : MonoBehaviour
             cameraList[currentCamera - 1].gameObject.SetActive(false);
             cameraList[currentCamera].gameObject.SetActive(true);
           }
+          else
+          {
+            cameraList[currentCamera - 1].gameObject.SetActive(false);
+            currentCamera = 0;
+            cameraList[currentCamera].gameObject.SetActive(true);
+          }
         }
 
         // Left Arrow Key
         if (Input.GetKeyDown(KeyCode.LeftArrow) && currentCamera >= 1)
         {
           currentCamera--;
-          if (currentCamera >= 0)
+          if (currentCamera >= 0 && currentCamera < cameraList.Length)
           {
             cameraList[currentCamera + 1].gameObject.SetActive(false);
             cameraList[currentCamera].gameObject.SetActive(true);
           }
+          else {
+            cameraList[currentCamera + 1].gameObject.SetActive(false);
+            currentCamera = 0;
+            cameraList[currentCamera].gameObject.SetActive(true);
+          }
         }
+      }
 
     }
 }
