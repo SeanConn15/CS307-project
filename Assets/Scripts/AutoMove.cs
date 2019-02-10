@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿// Aurthor: Jisoo Cha
+// Purpose: When press up arrow key, camera move to the portal and change scene.
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

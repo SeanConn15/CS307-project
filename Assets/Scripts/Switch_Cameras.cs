@@ -1,6 +1,9 @@
 // Aurthor: Haoran Wang
 // Purpose: let player switch between different levels by pressing left or right arrow keys
 
+//Jisoo Cha: added statement that when press up arrow key on camera one,
+//camera moves autometically to the portal and change to scene one.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -68,11 +71,12 @@ public class Switch_Cameras : MonoBehaviour
             cameraList[currentCamera].gameObject.SetActive(true);
           }
         }
+            //added by jisoo camera for scene one move if press uparrow key
+            if (currentCamera == 1)
+            {
+                automove.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
+            }
 
-
-            //added by jisoo scene change if press uparrow key
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-                automove.changeScene = true;
         }
     }
 }

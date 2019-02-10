@@ -717,7 +717,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78577505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -268.1}
+  m_LocalPosition: {x: 0, y: 0, z: -192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1712326954}
@@ -725,7 +725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28, y: -78.5}
+  m_AnchoredPosition: {x: 9, y: -86}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &78577507
@@ -1890,6 +1890,7 @@ Transform:
   - {fileID: 1392623490}
   - {fileID: 83309833}
   - {fileID: 236914756}
+  - {fileID: 883205538}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7856,7 +7857,7 @@ GameObject:
   - component: {fileID: 883205536}
   - component: {fileID: 883205535}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Portal
   m_TagString: portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7928,11 +7929,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883205534}
   m_LocalRotation: {x: -0, y: -0.38791168, z: -0, w: 0.9216966}
-  m_LocalPosition: {x: 362.48, y: 2.66, z: -34.25}
-  m_LocalScale: {x: 1.8075689, y: 2.682551, z: 0.058634847}
+  m_LocalPosition: {x: 363.53, y: 2.289254, z: -33.18}
+  m_LocalScale: {x: 1.807569, y: 2.682551, z: 0.058634855}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 406328913}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -45.649002, z: 0}
 --- !u!4 &884202669 stripped
 Transform:
