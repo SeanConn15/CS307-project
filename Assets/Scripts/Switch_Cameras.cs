@@ -5,10 +5,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Switch_Cameras : MonoBehaviour
 {
     public Camera[] cameraList;
     private int currentCamera;
+
+
+    //added by jisoo
+    public AutoMove automove; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +68,11 @@ public class Switch_Cameras : MonoBehaviour
             cameraList[currentCamera].gameObject.SetActive(true);
           }
         }
-      }
 
+
+            //added by jisoo scene change if press uparrow key
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+                automove.changeScene = true;
+        }
     }
 }
