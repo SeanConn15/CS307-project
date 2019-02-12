@@ -15,12 +15,18 @@ public class MovementController : MonoBehaviour
     public int moveSpeed = 5;
     public float m_jumpForce = 4;
     public Rigidbody m_rigidBody;
+    private Animator m_animator;
 
     private static Vector3 RightDirection = new Vector3(0, 0, 1);
     private static Vector3 LeftDirection = new Vector3(0, 0, -1);
 
     private float m_jumpTimeStamp = 0;
     private float m_minJumpInterval = 0.25f;
+
+    private void Start()
+    {
+        m_animator = GameObject.FindWithTag("Player").GetComponent<Animator>();
+    }
 
 
 
@@ -32,13 +38,11 @@ public class MovementController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
             jump();
 
-        // move right
-        if (Input.GetKey(KeyCode.RightArrow))
-            transform.Translate(RightDirection * moveSpeed * Time.deltaTime);
+        // run
+        run(Input.GetAxis("Horizontal"));
 
-        // move left 
-        if (Input.GetKey(KeyCode.LeftArrow))
-            transform.Translate(LeftDirection * moveSpeed * Time.deltaTime);
+
+        
     }
 
 
@@ -52,6 +56,32 @@ public class MovementController : MonoBehaviour
         {
             m_jumpTimeStamp = Time.time;
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            m_animator.SetFloat("MoveSpeed", 2);
+            m_animator.SetTrigger("Jump");
         }
     }
+
+
+
+    // player run
+    // calculate movement length
+    // calculate movement direction base on input
+    // right arrow is positive, left arrow is negtive
+    // change animator state base on movement length
+    // TODO: rotation
+    private void run(float horizontalInput) {
+        float movementLength = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        Vector3 direction = horizontalInput > 0 ? RightDirection : LeftDirection;
+
+        if (movementLength != 0)
+        {
+            m_animator.SetBool("isRunning", true);
+            transform.Translate(direction * moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            m_animator.SetBool("isRunning", false);
+        }
+    }
+
 }
