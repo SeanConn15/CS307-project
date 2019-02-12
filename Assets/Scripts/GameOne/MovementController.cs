@@ -13,7 +13,9 @@ public class MovementController : MonoBehaviour
 {
 
     public int moveSpeed = 5;
-    public float m_jumpForce = 4;
+    public float m_jumpForce = 4f;
+    public float rotationSpeed = 5f;
+
     public Rigidbody m_rigidBody;
     private Animator m_animator;
 
@@ -22,6 +24,9 @@ public class MovementController : MonoBehaviour
 
     private float m_jumpTimeStamp = 0;
     private float m_minJumpInterval = 0.25f;
+
+    private Vector3 FacingDirection = RightDirection;
+
 
     private void Start()
     {
@@ -39,7 +44,10 @@ public class MovementController : MonoBehaviour
             jump();
 
         // run
-        run(Input.GetAxis("Horizontal"));
+        run();
+
+        //if (Input.GetKey(KeyCode.R))
+            //rotate();
 
 
         
@@ -69,19 +77,40 @@ public class MovementController : MonoBehaviour
     // right arrow is positive, left arrow is negtive
     // change animator state base on movement length
     // TODO: rotation
-    private void run(float horizontalInput) {
+    private void run() {
         float movementLength = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        Vector3 direction = horizontalInput > 0 ? RightDirection : LeftDirection;
+        Vector3 direction = movementLength > 0 ? RightDirection : LeftDirection;
+
+
 
         if (movementLength != 0)
         {
+            //      if (FacingDirection != direction) {
+            //         transform.Rotate(0, 180, 0);
+            //         FacingDirection = direction;
+            //     }
+
             m_animator.SetBool("isRunning", true);
-            transform.Translate(direction * moveSpeed * Time.deltaTime);
+            //if (direction == LeftDirection) direction *= -1;
+            transform.Translate(rotate(direction) * moveSpeed * Time.deltaTime, Space.Self);
         }
         else
         {
-            m_animator.SetBool("isRunning", false);
+            m_animator.SetBool("isRunning", false);     
         }
+    }
+
+
+    private Vector3 rotate(Vector3 newDirection) {
+        if (FacingDirection != newDirection)
+        {
+            transform.Rotate(0, 180, 0);
+            FacingDirection = newDirection;
+
+        }
+        if (newDirection == LeftDirection)
+            newDirection *= -1;
+        return newDirection;
     }
 
 }
