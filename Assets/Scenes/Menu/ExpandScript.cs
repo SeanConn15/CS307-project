@@ -7,6 +7,8 @@ public class ExpandScript : MonoBehaviour
 {
 
     public GameObject ExpandMenu, MenuBack, MenuVMinus, MenuVPlus, MenuVolume;
+    public AudioSource menuAdjust;
+    float VolAdjustValue = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -49,15 +51,48 @@ public class ExpandScript : MonoBehaviour
     public void OnVMinusClick()
     {
         Debug.Log("Decrease Volume.");
+
+        //if muted, unmute before altering
+        if (menuAdjust.mute)
+        {
+            menuAdjust.mute = false;
+        }
+
+        //decrease volume by VolAdjValue or to 0
+        if (menuAdjust.volume - VolAdjustValue < 0)
+        {
+            menuAdjust.volume = 0;
+        }
+        else
+        {
+            menuAdjust.volume -= VolAdjustValue;
+        }
     }
 
     public void OnVPlusClick()
     {
         Debug.Log("Increase Volume.");
+
+        //if muted, unmute before altering
+        if (menuAdjust.mute)
+        {
+            menuAdjust.mute = false;
+        }
+
+        //increase volume by VolAdjValue or to max
+        if (menuAdjust.volume + VolAdjustValue > 1)
+        {
+            menuAdjust.volume = 1;
+        }
+        else
+        {
+            menuAdjust.volume += VolAdjustValue;
+        }
     }
 
     public void OnVolumeClick()
     {
         Debug.Log("Volume Pressed, Toggle Mute.");
+        menuAdjust.mute = !menuAdjust.mute;
     }
 }
