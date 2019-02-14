@@ -14,9 +14,8 @@ public class Switch_Cameras : MonoBehaviour
     public Camera[] cameraList;
     private int currentCamera;
 
-
     //added by jisoo
-    public AutoMove automove; 
+    public AutoMove automove;
 
 
     // Start is called before the first frame update

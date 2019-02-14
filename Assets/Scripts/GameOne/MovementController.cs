@@ -40,7 +40,7 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         // jump
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
             jump();
 
         // run
@@ -50,7 +50,7 @@ public class MovementController : MonoBehaviour
             //rotate();
 
 
-        
+
     }
 
 
@@ -96,7 +96,7 @@ public class MovementController : MonoBehaviour
         }
         else
         {
-            m_animator.SetBool("isRunning", false);     
+            m_animator.SetBool("isRunning", false);
         }
     }
 
