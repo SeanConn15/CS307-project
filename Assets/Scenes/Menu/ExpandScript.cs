@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class ExpandScript : MonoBehaviour
 {
 
+    public Animator menu_back_enter, menu_volume_enter, menu_vplus_enter, menu_vminus_enter, menu_resolution_enter, menu_se_enter;
     public GameObject ExpandMenu, MenuBack, MenuVMinus, MenuVPlus, MenuVolume, MenuResolution, MenuSE;
     public AudioSource menuAdjust;
     float VolAdjustValue = 0.2f;
@@ -54,6 +55,7 @@ public class ExpandScript : MonoBehaviour
     public void OnExpandClick()
     {
         Debug.Log("Expand button or escape key pressed.");
+
         ExpandMenu.SetActive(false);
         MenuBack.SetActive(true);
         MenuVPlus.SetActive(true);
@@ -61,17 +63,32 @@ public class ExpandScript : MonoBehaviour
         MenuVolume.SetActive(true);
         MenuResolution.SetActive(true);
         MenuSE.SetActive(true);
+
+        menu_back_enter.SetBool("engage_back", true);
+        menu_volume_enter.SetBool("engage_volume", true);
+        menu_vplus_enter.SetBool("engage_vplus", true);
+        menu_vminus_enter.SetBool("engage_vminus", true);
+        menu_resolution_enter.SetBool("engage_resolution", true);
+        menu_se_enter.SetBool("engage_saveexit", true);
     }
 
     public void OnBackClick()
     {
         Debug.Log("Back button or escape key pressed.");
-        MenuBack.SetActive(false);
-        MenuVPlus.SetActive(false);
-        MenuVMinus.SetActive(false);
-        MenuVolume.SetActive(false);
-        MenuResolution.SetActive(false);
-        MenuSE.SetActive(false);
+
+        menu_back_enter.SetBool("engage_back", false);
+        menu_volume_enter.SetBool("engage_volume", false);
+        menu_vplus_enter.SetBool("engage_vplus", false);
+        menu_vminus_enter.SetBool("engage_vminus", false);
+        menu_resolution_enter.SetBool("engage_resolution", false);
+        menu_se_enter.SetBool("engage_saveexit", false);
+
+        //MenuBack.SetActive(false);
+        //MenuVPlus.SetActive(false);
+        //MenuVMinus.SetActive(false);
+        //MenuVolume.SetActive(false);
+        //MenuResolution.SetActive(false);
+        //MenuSE.SetActive(false);
         ExpandMenu.SetActive(true);
     }
 
