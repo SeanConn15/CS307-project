@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Christian Bortolotti
+//Main Script for the menu buttons/interfacing
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +9,7 @@ using UnityEngine.UI;
 public class ExpandScript : MonoBehaviour
 {
 
-    public GameObject ExpandMenu, MenuBack, MenuVMinus, MenuVPlus, MenuVolume;
+    public GameObject ExpandMenu, MenuBack, MenuVMinus, MenuVPlus, MenuVolume, MenuResolution, MenuSE;
     public AudioSource menuAdjust;
     float VolAdjustValue = 0.2f;
 
@@ -20,12 +23,16 @@ public class ExpandScript : MonoBehaviour
         MenuVMinus = GameObject.Find("MenuVMinus");
         MenuVPlus = GameObject.Find("MenuVPlus");
         MenuVolume = GameObject.Find("MenuVolume");
+        MenuResolution = GameObject.Find("MenuResolution");
+        MenuSE = GameObject.Find("MenuSE");
 
         //Menu buttons begin inactive
         MenuBack.SetActive(false);
         MenuVPlus.SetActive(false);
         MenuVMinus.SetActive(false);
         MenuVolume.SetActive(false);
+        MenuResolution.SetActive(false);
+        MenuSE.SetActive(false);
     }
 
     public void OnExpandClick()
@@ -36,6 +43,8 @@ public class ExpandScript : MonoBehaviour
         MenuVPlus.SetActive(true);
         MenuVMinus.SetActive(true);
         MenuVolume.SetActive(true);
+        MenuResolution.SetActive(true);
+        MenuSE.SetActive(true);
     }
 
     public void OnBackClick()
@@ -45,6 +54,8 @@ public class ExpandScript : MonoBehaviour
         MenuVPlus.SetActive(false);
         MenuVMinus.SetActive(false);
         MenuVolume.SetActive(false);
+        MenuResolution.SetActive(false);
+        MenuSE.SetActive(false);
         ExpandMenu.SetActive(true);
     }
 
@@ -94,5 +105,15 @@ public class ExpandScript : MonoBehaviour
     {
         Debug.Log("Volume Pressed, Toggle Mute.");
         menuAdjust.mute = !menuAdjust.mute;
+    }
+
+    public void OnResolutionClick()
+    {
+        Debug.Log("Resolution Adjustments desired.");
+    }
+
+    public void OnSaveExitClick()
+    {
+        Debug.Log("Save Exit button pressed.");
     }
 }
