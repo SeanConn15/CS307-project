@@ -35,9 +35,25 @@ public class ExpandScript : MonoBehaviour
         MenuSE.SetActive(false);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (ExpandMenu.activeSelf)
+            {
+                OnExpandClick();
+            }
+            else
+            {
+                OnBackClick();
+            }
+            
+        }
+    }
+
     public void OnExpandClick()
     {
-        Debug.Log("Expand button pressed.");
+        Debug.Log("Expand button or escape key pressed.");
         ExpandMenu.SetActive(false);
         MenuBack.SetActive(true);
         MenuVPlus.SetActive(true);
@@ -49,7 +65,7 @@ public class ExpandScript : MonoBehaviour
 
     public void OnBackClick()
     {
-        Debug.Log("Back button pressed.");
+        Debug.Log("Back button or escape key pressed.");
         MenuBack.SetActive(false);
         MenuVPlus.SetActive(false);
         MenuVMinus.SetActive(false);
