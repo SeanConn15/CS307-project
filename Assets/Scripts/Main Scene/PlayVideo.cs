@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayVideo : MonoBehaviour {
 
@@ -22,7 +23,7 @@ public class PlayVideo : MonoBehaviour {
       if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightArrow)){
         Destroy(videoPlayer);
         currentCamera.SetActive(false);
-        nextCamera.SetActive(true);
+          SceneManager.LoadScene("Customization");
       }
   }
 }
