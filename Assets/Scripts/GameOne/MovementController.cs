@@ -66,7 +66,7 @@ public class MovementController : MonoBehaviour
 
     }
 
-   private bool isGrounded() {
+    private bool isGrounded() {
         return Physics.Raycast(transform.position, Vector3.down, distanceToGround);
     }
 
@@ -81,8 +81,6 @@ public class MovementController : MonoBehaviour
     private void run() {
         float movementLength = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         Vector3 direction = movementLength > 0 ? RightDirection : LeftDirection;
-
-
 
         if (movementLength != 0)
         {
