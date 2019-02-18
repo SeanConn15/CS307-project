@@ -22,14 +22,23 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.CompareTag("Check"))
         {
             int i = 0;
-            while (i < Enemy.Length)
+            while (i < Enemy.Length - 1)
             {
                 Enemy[i].gameObject.SetActive(true);
                 i++;
             }
+        }
+        if (other.gameObject.CompareTag("Check2"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (other.gameObject.CompareTag("Check3"))
+        {
+            Enemy[Enemy.Length - 1].gameObject.SetActive(true);
         }
     }
     private void OnCollisionEnter(Collision collision)

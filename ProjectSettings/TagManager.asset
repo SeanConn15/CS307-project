@@ -11,6 +11,9 @@ TagManager:
   - Enemy
   - Check
   - MainPortal
+  - OpenDoor1
+  - Check2
+  - Check3
   layers:
   - Default
   - TransparentFX
