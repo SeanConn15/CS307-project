@@ -9,10 +9,20 @@ using UnityEngine.UI;
 public class ExpandScript : MonoBehaviour
 {
 
-    public Animator menu_back_enter, menu_volume_enter, menu_vplus_enter, menu_vminus_enter, menu_resolution_enter, menu_se_enter;
-    public GameObject ExpandMenu, MenuBack, MenuVMinus, MenuVPlus, MenuVolume, MenuResolution, MenuSE;
+    public Animator menu_back_enter, menu_volume_enter, menu_vplus_enter, menu_vminus_enter, 
+        menu_resolution_enter, menu_se_enter, menu_resmin_enter, menu_resplus_enter;
+    public GameObject ExpandMenu, MenuBack, MenuVMinus, MenuVPlus, MenuVolume,
+        MenuResolution, MenuSE, MenuResMinus, MenuResPlus;
     public AudioSource menuAdjust;
     float VolAdjustValue = 0.2f;
+
+    private const string RESOLUTION_PREF_KEY = "resolution";
+
+    [SerializeField]
+    private Text resolutionText;
+    private Resolution[] resolutions;
+    private int currentResolutionIndex = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +35,13 @@ public class ExpandScript : MonoBehaviour
         MenuVPlus = GameObject.Find("MenuVPlus");
         MenuVolume = GameObject.Find("MenuVolume");
         MenuResolution = GameObject.Find("MenuResolution");
+        MenuResMinus = GameObject.Find("MenuResMinus");
+        MenuResPlus = GameObject.Find("MenuResPlus");
         MenuSE = GameObject.Find("MenuSE");
+
+        resolutions = Screen.resolutions;
+        currentResolutionIndex = PlayerPrefs.GetInt(RESOLUTION_PREF_KEY, 0);
+        SetResolutionText(resolutions[currentResolutionIndex]);
 
         //Menu buttons begin inactive
         MenuBack.SetActive(false);
@@ -33,6 +49,8 @@ public class ExpandScript : MonoBehaviour
         MenuVMinus.SetActive(false);
         MenuVolume.SetActive(false);
         MenuResolution.SetActive(false);
+        //MenuResMinus.SetActive(false);
+        //MenuResPlus.SetActive(false);
         MenuSE.SetActive(false);
     }
 
@@ -62,6 +80,8 @@ public class ExpandScript : MonoBehaviour
         MenuVMinus.SetActive(true);
         MenuVolume.SetActive(true);
         MenuResolution.SetActive(true);
+        //MenuResMinus.SetActive(true);
+        //MenuResPlus.SetActive(true);
         MenuSE.SetActive(true);
 
         menu_back_enter.SetBool("engage_back", true);
@@ -148,5 +168,56 @@ public class ExpandScript : MonoBehaviour
     public void OnSaveExitClick()
     {
         Debug.Log("Save Exit button pressed.");
+        Application.Quit();
+    }
+
+    private void SetResolutionText(Resolution resolution)
+    {
+        resolutionText.text = resolution.width + "x" + resolution.height;
+    }
+    public void SetNextResolution()
+    {
+        currentResolutionIndex = GetNextWrappedIndex(resolutions, currentResolutionIndex);
+        SetResolutionText(resolutions[currentResolutionIndex]);
+    }
+    public void SetPreviousResolution()
+    {
+        currentResolutionIndex = GetPreviousWrappedIndex(resolutions, currentResolutionIndex);
+        SetResolutionText(resolutions[currentResolutionIndex]);
+    }
+
+    private void SetAndApplyResolution(int newResolutionIndex)
+    {
+        currentResolutionIndex = newResolutionIndex;
+        ApplyCurrentResolution();
+    }
+    private void ApplyCurrentResolution()
+    {
+        ApplyResolution(resolutions[currentResolutionIndex]);
+    }
+    private void ApplyResolution(Resolution resolution)
+    {
+        SetResolutionText(resolution);
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        PlayerPrefs.SetInt(RESOLUTION_PREF_KEY, currentResolutionIndex);
+    }
+
+    public void ApplyChanges()
+    {
+        SetAndApplyResolution(currentResolutionIndex);
+    }
+
+    // Helper functions
+    private int GetNextWrappedIndex<T>(IList<T> collection, int currentIndex) // will get Next index or beginning of array
+    {
+        if (collection.Count < 1) return 0;
+        return (currentIndex + 1) % collection.Count;
+    }
+    private int GetPreviousWrappedIndex<T>(IList<T> collection, int currentIndex) // will get Prev index or last of array
+    {
+        if (collection.Count < 1) return 0;
+        if ((currentIndex - 1) < 0) return collection.Count - 1;
+        return (currentIndex - 1) % collection.Count;
+
     }
 }
