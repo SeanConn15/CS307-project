@@ -30,6 +30,7 @@ public class BoxCollider : MonoBehaviour
         {
             changeScene = true;
 
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

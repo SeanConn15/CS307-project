@@ -8,12 +8,14 @@ public class Player : MonoBehaviour
     //GameObject player;
     public Transform target;
     public GameObject[] Enemy;
+    GameObject[] music;
 
     Vector3 StartPoint;
 
     void Start()
     {
         StartPoint = transform.position;
+        music = GameObject.FindGameObjectsWithTag("music"); // get music
     }
 
     void Update()
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("MainPortal"))
         {
+            Destroy(music[0]);   // Destory BackGround Music for Game One
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
