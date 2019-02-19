@@ -18,6 +18,7 @@ public class ExpandScript : MonoBehaviour
 
     private const string RESOLUTION_PREF_KEY = "resolution";
 
+
     [SerializeField]
     private Text resolutionText;
     private Resolution[] resolutions;
@@ -84,12 +85,16 @@ public class ExpandScript : MonoBehaviour
         //MenuResPlus.SetActive(true);
         MenuSE.SetActive(true);
 
+
         menu_back_enter.SetBool("engage_back", true);
         menu_volume_enter.SetBool("engage_volume", true);
         menu_vplus_enter.SetBool("engage_vplus", true);
         menu_vminus_enter.SetBool("engage_vminus", true);
         menu_resolution_enter.SetBool("engage_resolution", true);
         menu_se_enter.SetBool("engage_saveexit", true);
+
+        //Time.timeScale = 0;
+
     }
 
     public void OnBackClick()
@@ -110,6 +115,8 @@ public class ExpandScript : MonoBehaviour
         //MenuResolution.SetActive(false);
         //MenuSE.SetActive(false);
         ExpandMenu.SetActive(true);
+
+        //Time.timeScale = 1;
     }
 
     public void OnVMinusClick()
@@ -162,7 +169,8 @@ public class ExpandScript : MonoBehaviour
 
     public void OnResolutionClick()
     {
-        Debug.Log("Resolution Adjustments desired.");
+        Debug.Log("Toggle Full-Screen and Window");
+        Screen.fullScreen = !Screen.fullScreen;
     }
 
     public void OnSaveExitClick()
