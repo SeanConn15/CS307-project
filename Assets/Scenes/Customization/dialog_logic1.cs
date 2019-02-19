@@ -9,16 +9,19 @@ public class dialog_logic1 : MonoBehaviour
 {
     GameObject player;      //player character
     GameObject dialog;      //dialog menu
+    GameObject dialog2;      //dialog menu
     GameObject indicator;   //next scene location indicator
     //called at beginning
     void Start()
     {
         player =    GameObject.Find("Player");
         dialog =    GameObject.Find("Dialog");
+        dialog2 = GameObject.Find("Dialog 2");
         indicator = GameObject.Find("Indicator");
 
         dialog.SetActive(false);
         indicator.SetActive(false);
+        dialog2.SetActive(false);
         GameObject.Find("NPC").GetComponent<Animator>().SetTrigger("Wave");
     }
 
@@ -35,5 +38,6 @@ public class dialog_logic1 : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         dialog.SetActive(false);
+        dialog2.SetActive(true);
     }
 }
