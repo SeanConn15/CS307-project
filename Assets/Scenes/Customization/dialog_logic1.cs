@@ -19,6 +19,7 @@ public class dialog_logic1 : MonoBehaviour
 
         dialog.SetActive(false);
         indicator.SetActive(false);
+        GameObject.Find("NPC").GetComponent<Animator>().SetTrigger("Wave");
     }
 
     // Update is called once per frame
