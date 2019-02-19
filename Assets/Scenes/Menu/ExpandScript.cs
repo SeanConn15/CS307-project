@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ExpandScript : MonoBehaviour
 {
@@ -159,6 +160,13 @@ public class ExpandScript : MonoBehaviour
         {
             menuAdjust.volume += VolAdjustValue;
         }
+    }
+
+    public void OnMainMenuClick()
+    {
+        //Application.LoadLevel("Main Scene");
+        SceneManager.LoadScene("Main Scene");
+        
     }
 
     public void OnVolumeClick()
