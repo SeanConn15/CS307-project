@@ -26,12 +26,22 @@ public class MovementController : MonoBehaviour
 
     private Vector3 FacingDirection = RightDirection;
 
-    private float distanceToGround = 0.4f;
+    private float distanceToGround = 0.7f;
+
+    private float m_jumpTimeStamp = 0;
+    private float m_minJumpInterval = 0.25f;
+
+    private bool m_wasGrounded;
+    private bool rounded;
+
+    public Collider collider;
 
 
     private void Start()
     {
         m_animator = GameObject.FindWithTag("Player").GetComponent<Animator>();
+        distanceToGround = collider.bounds.extents.y;
+        collider = new Collider();
     }
 
 
@@ -40,9 +50,9 @@ public class MovementController : MonoBehaviour
     // TODO add animations
     void Update()
     {
-        // jump
-        if (Input.GetKeyDown(KeyCode.Space))
-            jump();
+         Debug.Log(Input.GetKeyDown(KeyCode.Space) + " "+ isGrounded() + " " + transform.position);
+
+        jump();
 
         // run
         run();
@@ -55,19 +65,27 @@ public class MovementController : MonoBehaviour
     // TODO isGrounded detection
     private void jump() {
         // jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
+        m_animator.SetBool("Grounded", isGrounded());
+        //m_wasGrounded = isGrounded();
 
-        if (isGrounded() && Input.GetKey(KeyCode.Space))
+        if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
-           //m_jumpTimeStamp = Time.time;
+            m_animator.SetTrigger("Jump");
+            //m_animator.SetBool("isJumping", true);
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
-           // m_animator.SetFloat("MoveSpeed", 2);
-            //m_animator.SetTrigger("Jump");
         }
+        //m_animator.SetBool("isJumping", false);
 
     }
 
     private bool isGrounded() {
-        return Physics.Raycast(transform.position, Vector3.down, distanceToGround);
+        return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        //grounded = col.gameObject.tag == "Ground";
+        
     }
 
 
@@ -84,13 +102,14 @@ public class MovementController : MonoBehaviour
 
         if (movementLength != 0)
         {
-            m_animator.SetBool("isRunning", true);
+            if (isGrounded()) m_animator.SetBool("isRunning", true);
             transform.Translate(rotate(direction) * moveSpeed * Time.deltaTime, Space.Self);
         }
         else
         {
             m_animator.SetBool("isRunning", false);
         }
+
     }
 
 
@@ -105,5 +124,9 @@ public class MovementController : MonoBehaviour
             newDirection *= -1;
         return newDirection;
     }
+
+
+
+ 
 
 }
