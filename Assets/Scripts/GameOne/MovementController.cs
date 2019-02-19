@@ -79,7 +79,7 @@ public class MovementController : MonoBehaviour
     }
 
     private bool isGrounded() {
-        return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
+        return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.4f);
     }
 
     void OnCollisionEnter(Collision col)
