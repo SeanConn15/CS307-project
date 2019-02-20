@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public Transform target;
     public GameObject[] Enemy;
     GameObject[] music;
+    
+    public Rigidbody m_rigidBody;
 
     Vector3 StartPoint;
 
@@ -54,6 +56,10 @@ public class Player : MonoBehaviour
         {
             Destroy(music[0]);   // Destory BackGround Music for Game One
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+        if (collision.gameObject.CompareTag("Jumper"))
+        {
+            m_rigidBody.AddForce(Vector3.up * 30, ForceMode.Impulse);
         }
     }
 }
