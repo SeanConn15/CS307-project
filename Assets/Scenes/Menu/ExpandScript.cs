@@ -20,7 +20,6 @@ public class ExpandScript : MonoBehaviour
 
     private const string RESOLUTION_PREF_KEY = "resolution";
 
-    GameObject keepAlive;
 
     [SerializeField]
     private Text resolutionText;
@@ -62,8 +61,6 @@ public class ExpandScript : MonoBehaviour
         ReturnMain.SetActive(false);
         ResText.SetActive(false);
         MenuSE.SetActive(false);
-
-        keepAlive = GameObject.FindGameObjectWithTag("KeepAlive");
     }
 
     void Update()
@@ -197,11 +194,6 @@ public class ExpandScript : MonoBehaviour
         if (Time.timeScale != 1)
         {
             Time.timeScale = 1;
-        }
-
-        if (keepAlive)
-        {
-            Destroy(keepAlive);
         }
 
         SceneManager.LoadScene("Main Scene");

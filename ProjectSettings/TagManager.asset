@@ -17,7 +17,6 @@ TagManager:
   - TP
   - music
   - Jumper
-  - KeepAlive
   layers:
   - Default
   - TransparentFX
