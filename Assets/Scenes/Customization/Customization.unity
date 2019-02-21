@@ -45,8 +45,8 @@ RenderSettings:
   m_IndirectSpecularColor: {r: 0.24712083, g: 0.3094454, b: 0.36559567, a: 1}
 >>>>>>> parent of be7fe4b... Organizing and Testing for grading
 =======
-  m_IndirectSpecularColor: {r: 0.24712083, g: 0.3094454, b: 0.36559567, a: 1}
->>>>>>> parent of be7fe4b... Organizing and Testing for grading
+  m_IndirectSpecularColor: {r: 0.24712062, g: 0.30944502, b: 0.36559573, a: 1}
+>>>>>>> parent of f433904... Did not merge properly last time
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5022,7 +5022,7 @@ Transform:
 =======
 >>>>>>> parent of be7fe4b... Organizing and Testing for grading
 =======
->>>>>>> parent of be7fe4b... Organizing and Testing for grading
+>>>>>>> parent of f433904... Did not merge properly last time
 --- !u!1001 &2057386336
 PrefabInstance:
   m_ObjectHideFlags: 0
