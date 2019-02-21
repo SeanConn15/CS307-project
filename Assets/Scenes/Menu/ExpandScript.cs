@@ -1,4 +1,4 @@
-﻿//Christian Bortolotti
+﻿//Christian Bortolotti / Seunghyun Lee
 //Main Script for the menu buttons/interfacing
 
 using System.Collections;
@@ -11,9 +11,10 @@ public class ExpandScript : MonoBehaviour
 {
 
     public Animator menu_back_enter, menu_volume_enter, menu_vplus_enter, menu_vminus_enter, 
-        menu_resolution_enter, menu_se_enter, menu_resmin_enter, menu_resplus_enter;
+        menu_resolution_enter, menu_se_enter, menu_resmin_enter, menu_resplus_enter,
+        menu_res_text, menu_res_apply, menu_main;
     public GameObject ExpandMenu, MenuBack, MenuVMinus, MenuVPlus, MenuVolume,
-        MenuResolution, MenuSE, MenuResMinus, MenuResPlus;
+        MenuResolution, MenuSE, MenuResMinus, MenuResPlus, ResApply, ReturnMain, ResText;
     public AudioSource menuAdjust;
     float VolAdjustValue = 0.2f;
 
@@ -40,6 +41,9 @@ public class ExpandScript : MonoBehaviour
         MenuResMinus = GameObject.Find("MenuResMinus");
         MenuResPlus = GameObject.Find("MenuResPlus");
         MenuSE = GameObject.Find("MenuSE");
+        ResApply = GameObject.Find("ResApply");
+        ReturnMain = GameObject.Find("ReturnMain");
+        ResText = GameObject.Find("ResolutionText");
 
         resolutions = Screen.resolutions;
         currentResolutionIndex = PlayerPrefs.GetInt(RESOLUTION_PREF_KEY, 0);
@@ -51,8 +55,11 @@ public class ExpandScript : MonoBehaviour
         MenuVMinus.SetActive(false);
         MenuVolume.SetActive(false);
         MenuResolution.SetActive(false);
-        //MenuResMinus.SetActive(false);
-        //MenuResPlus.SetActive(false);
+        MenuResMinus.SetActive(false);
+        MenuResPlus.SetActive(false);
+        ResApply.SetActive(false);
+        ReturnMain.SetActive(false);
+        ResText.SetActive(false);
         MenuSE.SetActive(false);
     }
 
@@ -82,10 +89,12 @@ public class ExpandScript : MonoBehaviour
         MenuVMinus.SetActive(true);
         MenuVolume.SetActive(true);
         MenuResolution.SetActive(true);
-        //MenuResMinus.SetActive(true);
-        //MenuResPlus.SetActive(true);
+        MenuResMinus.SetActive(true);
+        MenuResPlus.SetActive(true);
         MenuSE.SetActive(true);
-
+        ResApply.SetActive(true);
+        ReturnMain.SetActive(true);
+        ResText.SetActive(true);
 
         menu_back_enter.SetBool("engage_back", true);
         menu_volume_enter.SetBool("engage_volume", true);
@@ -93,6 +102,11 @@ public class ExpandScript : MonoBehaviour
         menu_vminus_enter.SetBool("engage_vminus", true);
         menu_resolution_enter.SetBool("engage_resolution", true);
         menu_se_enter.SetBool("engage_saveexit", true);
+        menu_resmin_enter.SetBool("engage_rminus", true);
+        menu_resplus_enter.SetBool("engage_rplus", true);
+        menu_res_apply.SetBool("engage_res_apply", true);
+        menu_main.SetBool("engage_return_menu", true);
+        menu_res_text.SetBool("engage_res_text", true);
 
         //Time.timeScale = 0;
 
@@ -108,6 +122,11 @@ public class ExpandScript : MonoBehaviour
         menu_vminus_enter.SetBool("engage_vminus", false);
         menu_resolution_enter.SetBool("engage_resolution", false);
         menu_se_enter.SetBool("engage_saveexit", false);
+        menu_resmin_enter.SetBool("engage_rminus", false);
+        menu_resplus_enter.SetBool("engage_rplus", false);
+        menu_res_apply.SetBool("engage_res_apply", false);
+        menu_main.SetBool("engage_return_menu", false);
+        menu_res_text.SetBool("engage_res_text", false);
 
         //MenuBack.SetActive(false);
         //MenuVPlus.SetActive(false);
@@ -193,11 +212,13 @@ public class ExpandScript : MonoBehaviour
     }
     public void SetNextResolution()
     {
+        Debug.Log("Next res.");
         currentResolutionIndex = GetNextWrappedIndex(resolutions, currentResolutionIndex);
         SetResolutionText(resolutions[currentResolutionIndex]);
     }
     public void SetPreviousResolution()
     {
+        Debug.Log("Prev res.");
         currentResolutionIndex = GetPreviousWrappedIndex(resolutions, currentResolutionIndex);
         SetResolutionText(resolutions[currentResolutionIndex]);
     }
@@ -220,6 +241,7 @@ public class ExpandScript : MonoBehaviour
 
     public void ApplyChanges()
     {
+        Debug.Log("Res apply.");
         SetAndApplyResolution(currentResolutionIndex);
     }
 
