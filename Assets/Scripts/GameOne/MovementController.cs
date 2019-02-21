@@ -44,6 +44,12 @@ public class MovementController : MonoBehaviour
         jump();
 
         run();
+
+        // Test mouse
+        if (Input.GetMouseButtonDown(0))
+        {
+          Debug.Log("Mouse Okay");
+        }
     }
 
 
@@ -63,7 +69,7 @@ public class MovementController : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.4f);
     }
 
-  
+
 
 
 
@@ -103,6 +109,6 @@ public class MovementController : MonoBehaviour
 
 
 
- 
+
 
 }
