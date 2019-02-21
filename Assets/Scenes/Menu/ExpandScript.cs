@@ -108,8 +108,11 @@ public class ExpandScript : MonoBehaviour
         menu_main.SetBool("engage_return_menu", true);
         menu_res_text.SetBool("engage_res_text", true);
 
-        //Time.timeScale = 0;
-
+        if (Time.timeScale != 0)
+        {
+            Time.timeScale = 0;
+        }
+        
     }
 
     public void OnBackClick()
@@ -136,7 +139,11 @@ public class ExpandScript : MonoBehaviour
         //MenuSE.SetActive(false);
         ExpandMenu.SetActive(true);
 
-        //Time.timeScale = 1;
+        if (Time.timeScale != 1)
+        {
+            Time.timeScale = 1;
+        }
+        
     }
 
     public void OnVMinusClick()
@@ -184,6 +191,11 @@ public class ExpandScript : MonoBehaviour
     public void OnMainMenuClick()
     {
         //Application.LoadLevel("Main Scene");
+        if (Time.timeScale != 1)
+        {
+            Time.timeScale = 1;
+        }
+
         SceneManager.LoadScene("Main Scene");
         
     }
