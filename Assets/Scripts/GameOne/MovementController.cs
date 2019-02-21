@@ -58,7 +58,7 @@ public class MovementController : MonoBehaviour
     private void jump() {
         m_animator.SetBool("Grounded", isGrounded());
 
-        if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded() && Input.GetKeyDown(KeyCode.UpArrow))
         {
             m_animator.SetTrigger("Jump");
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
