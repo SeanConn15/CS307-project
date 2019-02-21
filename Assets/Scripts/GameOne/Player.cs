@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Jumper"))
         {
-            m_rigidBody.AddForce(Vector3.up * 30, ForceMode.Impulse);
+            m_rigidBody.AddForce(Vector3.up * 16, ForceMode.Impulse);
         }
     }
 }
