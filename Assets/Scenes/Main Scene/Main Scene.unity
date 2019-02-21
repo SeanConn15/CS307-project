@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3528638, g: 0.5736512, b: 0.868663, a: 1}
+  m_IndirectSpecularColor: {r: 0.35287032, g: 0.5736549, b: 0.86866295, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 62277041}
   - component: {fileID: 62277042}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Audio Source2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14800,7 +14800,7 @@ MonoBehaviour:
   ResApply: {fileID: 2605865374009107039}
   ReturnMain: {fileID: 2605865372764354632}
   ResText: {fileID: 2605865373026283287}
-  menuAdjust: {fileID: 0}
+  menuAdjust: {fileID: 62277042}
   resolutionText: {fileID: 2605865374226542602}
 --- !u!1 &2605865374447104775
 GameObject:
