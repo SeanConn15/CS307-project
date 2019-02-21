@@ -10,12 +10,12 @@ public class PlayVideo : MonoBehaviour {
 
     public GameObject videoPlayer;
     public GameObject currentCamera;
-    public GameObject nextCamera;
+    //public GameObject nextCamera;
 
 	// Use this for initialization
 	void Start () {
         videoPlayer.SetActive(true);
-        nextCamera.SetActive(false);
+        //nextCamera.SetActive(false);
 	}
 
 	// Update is called once per frame
