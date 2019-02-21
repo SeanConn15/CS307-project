@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     public Transform target;
     public GameObject[] Enemy;
     GameObject[] music;
-    
+    GameObject keepAlive;
+
     public Rigidbody m_rigidBody;
 
     Vector3 StartPoint;
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     {
         StartPoint = transform.position;
         music = GameObject.FindGameObjectsWithTag("music"); // get music
+        keepAlive = GameObject.FindGameObjectWithTag("KeepAlive");
     }
 
     void Update()
@@ -55,6 +57,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("MainPortal"))
         {
             Destroy(music[0]);   // Destory BackGround Music for Game One
+            Destroy(keepAlive); //Destroy UI for Game One
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
         if (collision.gameObject.CompareTag("Jumper"))
