@@ -39,7 +39,11 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.24712062, g: 0.30944502, b: 0.36559573, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.24712083, g: 0.3094454, b: 0.36559567, a: 1}
+>>>>>>> parent of be7fe4b... Organizing and Testing for grading
 =======
   m_IndirectSpecularColor: {r: 0.24712083, g: 0.3094454, b: 0.36559567, a: 1}
 >>>>>>> parent of be7fe4b... Organizing and Testing for grading
@@ -4948,6 +4952,7 @@ Transform:
   m_PrefabInstance: {fileID: 1282740424}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &2038943896
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,6 +5019,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of be7fe4b... Organizing and Testing for grading
 =======
 >>>>>>> parent of be7fe4b... Organizing and Testing for grading
 --- !u!1001 &2057386336

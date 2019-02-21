@@ -763,12 +763,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 207778416}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67ac4df0d70e46f5841727277e52efb, type: 3}
 <<<<<<< HEAD
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name:
   m_EditorClassIdentifier:
 =======
-  m_Script: {fileID: 11500000, guid: d67ac4df0d70e46f5841727277e52efb, type: 3}
   m_Name:
   m_EditorClassIdentifier:
 --- !u!1 &207778416
@@ -801,7 +800,6 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name:
   m_EditorClassIdentifier:
->>>>>>> parent of be7fe4b... Organizing and Testing for grading
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -819,7 +817,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-<<<<<<< HEAD
   m_Name:
   m_EditorClassIdentifier:
 =======
@@ -841,8 +838,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 13
+  m_RootOrder: 14
 =======
   m_RootOrder: 14
 >>>>>>> parent of be7fe4b... Organizing and Testing for grading
@@ -1597,73 +1593,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 410.0001, y: 43.273987, z: 415.0001}
   m_Center: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
---- !u!1 &648034251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 648034252}
-  - component: {fileID: 648034254}
-  - component: {fileID: 648034253}
-  m_Layer: 5
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &648034252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648034251}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.000023013377, z: 603.28186}
-  m_LocalScale: {x: 0.2926343, y: 0.29263434, z: 0.29263434}
-  m_Children: []
-  m_Father: {fileID: 1422044530}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &648034253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648034251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &648034254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648034251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 =======
 >>>>>>> parent of be7fe4b... Organizing and Testing for grading
 --- !u!1001 &653394112
@@ -6268,12 +6197,10 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_SortingOrder: 0
-=======
   m_SortingOrder: 50
->>>>>>> 0ef864acf8977f7261d246f6e2f9f203ad0a4467
+=======
+  m_SortingOrder: 5
+>>>>>>> parent of be7fe4b... Organizing and Testing for grading
 =======
   m_SortingOrder: 5
 >>>>>>> parent of be7fe4b... Organizing and Testing for grading
