@@ -12,10 +12,11 @@ public class AutoMove : MonoBehaviour
     CameraMove cameraM;
     public bool changeScene = false;
     int i = 0;
+    public GameObject gameController;
 
     void Start()
     {
-        GameObject gameController = GameObject.FindGameObjectWithTag("CameraMove");
+        //GameObject gameController = GameObject.FindGameObjectWithTag("CameraMove");
         cameraM = gameController.GetComponent<CameraMove>();
     }
 
@@ -35,6 +36,18 @@ public class AutoMove : MonoBehaviour
             changeScene = true;
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (other.gameObject.CompareTag("portal2"))
+        {
+            changeScene = true;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        }
+        if (other.gameObject.CompareTag("portal3"))
+        {
+            changeScene = true;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
         }
     }
 }

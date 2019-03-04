@@ -17,6 +17,8 @@ TagManager:
   - TP
   - music
   - Jumper
+  - portal2
+  - portal3
   layers:
   - Default
   - TransparentFX

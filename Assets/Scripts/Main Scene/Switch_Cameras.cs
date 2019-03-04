@@ -15,7 +15,9 @@ public class Switch_Cameras : MonoBehaviour
     private int currentCamera;
 
     //added by jisoo
-    public AutoMove automove;
+    public AutoMove automove1;
+    public AutoMove automove2;
+    public AutoMove automove3;
 
 
     // Start is called before the first frame update
@@ -73,9 +75,16 @@ public class Switch_Cameras : MonoBehaviour
             //added by jisoo camera for scene one move if press uparrow key
             if (currentCamera == 1)
             {
-                automove.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
+                automove1.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
             }
-
+            if (currentCamera == 2)
+            {
+                automove2.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
+            }
+            if (currentCamera == 3)
+            {
+                automove3.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
+            }
         }
     }
 }
