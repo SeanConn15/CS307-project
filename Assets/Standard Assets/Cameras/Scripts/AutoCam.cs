@@ -35,7 +35,7 @@ namespace UnityStandardAssets.Cameras
             // initialise some vars, we'll be modifying these in a moment
             var targetForward = m_Target.forward;
             var targetUp = m_Target.up;
-
+            /*
             if (m_FollowVelocity && Application.isPlaying)
             {
                 // in follow velocity mode, the camera's rotation is aligned towards the object's velocity direction
@@ -83,7 +83,7 @@ namespace UnityStandardAssets.Cameras
                 }
                 m_LastFlatAngle = currentFlatAngle;
             }
-
+            */
             // camera position moves towards target position:
             transform.position = Vector3.Lerp(transform.position, m_Target.position, deltaTime*m_MoveSpeed);
 
