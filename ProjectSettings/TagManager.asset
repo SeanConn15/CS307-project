@@ -19,6 +19,8 @@ TagManager:
   - Jumper
   - portal2
   - portal3
+  - Breadcrumb
+  - Waypoint
   layers:
   - Default
   - TransparentFX

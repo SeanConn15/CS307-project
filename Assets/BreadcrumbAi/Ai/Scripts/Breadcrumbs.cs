@@ -79,7 +79,7 @@ namespace BreadcrumbAi{
 				GameObject newObj = new GameObject();
 				newObj.name = "Breadcrumb";
 				newObj.AddComponent<BoxCollider>();
-                newObj.GetComponent<Collider>().isTrigger = true;
+                //newObj.GetComponent<Collider>().isTrigger = true;
 				newObj.layer = LayerMask.NameToLayer("Breadcrumb");
 				try{
 					newObj.tag = "Breadcrumb";
