@@ -35,9 +35,26 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        attack();
         move();
+        
     }
 
+    private void attack() 
+    { 
+        if (controller.isGrounded) 
+        { 
+            if (Input.GetKey(KeyCode.X)) 
+            {
+                this.animator.SetBool(key_isAttack01, true);
+            }
+            else 
+            {
+                this.animator.SetBool(key_isAttack01, false);
+            }
+        }
+
+    }
 
 
     // move when pressing UpArrow
