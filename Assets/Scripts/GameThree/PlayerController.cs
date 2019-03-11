@@ -9,10 +9,11 @@ Player Controller
 
 public class PlayerController : MonoBehaviour
 {
-    float speed = 4f;
-    float rotation_speed = 80f;
-    float gravity = 8f;
+    float speed = 8f;
+    float rotation_speed = 160f;
+    float gravity = 27f;
     float rotation = 0f;
+    float jump_speed = 10f;
 
     private const string key_isRun = "IsRun";
     private const string key_isAttack01 = "IsAttack01";
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     CharacterController controller;     // Character Controller Object, provided by Unity
     Animator animator;
+    int jumps;
 
 
     void Start()
@@ -36,24 +38,37 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         attack();
-        move();
-        
+        movement();
+
     }
+
+    private void jump()
+    {
+        if (controller.isGrounded)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                this.animator.SetBool(key_isJump, true);
+                moveDirection.y = jump_speed;
+            }
+            else
+            {
+                this.animator.SetBool(key_isJump, false);
+            }
+        }
+    }
+
+  
 
     private void attack() 
     { 
         if (controller.isGrounded) 
-        { 
-            if (Input.GetKey(KeyCode.X)) 
-            {
+        {
+            if (Input.GetKeyDown(KeyCode.X)) 
                 this.animator.SetBool(key_isAttack01, true);
-            }
             else 
-            {
                 this.animator.SetBool(key_isAttack01, false);
-            }
         }
-
     }
 
 
@@ -63,43 +78,30 @@ public class PlayerController : MonoBehaviour
         if (controller.isGrounded)
         {
             if (Input.GetKey(KeyCode.UpArrow))
-            {
-                moveDirection = new Vector3(0, 0, 1);
                 this.animator.SetBool(key_isRun, true);
-            } 
             else 
-            { 
-                moveDirection = new Vector3(0, 0, 0);
                 this.animator.SetBool(key_isRun, false);
-            }
+        }
+    }
+
+
+    private void movement() 
+    { 
+        if (controller.isGrounded) 
+        {
+            move();
+
+            moveDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= speed;
+
+            jump();
         }
 
-        setDirection();
+        transform.Rotate(0, Input.GetAxis("Horizontal"), 0);
+        moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
     }
-
-    // set movement direction
-    private void setDirection()
-    {
-        rotate();
-        moveDirection *= speed;
-        moveDirection = transform.TransformDirection(moveDirection);    // transform from local axis to Global axis
-        moveDirection.y -= gravity * Time.deltaTime;
-    }
-
-    // accept horizontal input and transform it into a vector 
-    private void rotate() 
-    {
-        // get horizontal input
-        rotation += Input.GetAxis("Horizontal") * rotation_speed * Time.deltaTime;
-
-        // transform input into vector
-        transform.eulerAngles = new Vector3(0, rotation, 0);
-    }
-
-
-
-
 
 
 }
