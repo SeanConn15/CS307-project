@@ -10,7 +10,7 @@ Player Controller
 public class PlayerController : MonoBehaviour
 {
     float speed = 8f;
-    float rotation_speed = 160f;
+    float rotation_speed = 3f;
     float gravity = 27f;
     float rotation = 0f;
     float jump_speed = 10f;
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
             jump();
         }
 
-        transform.Rotate(0, Input.GetAxis("Horizontal"), 0);
+        transform.Rotate(0, Input.GetAxis("Horizontal") * rotation_speed, 0);
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
     }
