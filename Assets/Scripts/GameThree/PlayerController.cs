@@ -9,6 +9,7 @@ Player Controller
 
 public class PlayerController : MonoBehaviour
 {
+    public PlayerStats stats;
     float speed = 8f;
     float rotation_speed = 3f;
     float gravity = 27f;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     CharacterController controller;     // Character Controller Object, provided by Unity
     Animator animator;
+
     int jumps;
 
 
@@ -102,6 +104,11 @@ public class PlayerController : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
     }
-
-
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("damage"))
+        {   
+            stats.TakeDamage(1);
+        }
+    }
 }

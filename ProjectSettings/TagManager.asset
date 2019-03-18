@@ -21,6 +21,8 @@ TagManager:
   - portal3
   - Breadcrumb
   - Waypoint
+  - Destructible
+  - damage
   layers:
   - Default
   - TransparentFX

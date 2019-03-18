@@ -9,6 +9,7 @@ public class DemoEnemySounds{
 
 public class DemoEnemyControls : MonoBehaviour {
 
+	public GameObject dmg;
 	public DemoEnemySounds audioClips;
 	public enum EnemyType {Melee, Ranged, Special};
 	public GameObject healthPickUpPrefab;
@@ -97,8 +98,13 @@ public class DemoEnemyControls : MonoBehaviour {
 						audioSource.PlayOneShot(audioSource.clip);
 						//player.GetComponent<DemoPlayerControls>()._isHit = true; //TODO: damage the player, play animation
 						_animAttack = true;
+
+						dmg.gameObject.SetActive(true);
+
 					} else {
 						_animAttack = false;
+
+						dmg.gameObject.SetActive(false);
 					}
 		    	} else {
 					if(ai.attackState == Ai.ATTACK_STATE.CanAttackPlayer && Time.time > rangedAttackNext){
