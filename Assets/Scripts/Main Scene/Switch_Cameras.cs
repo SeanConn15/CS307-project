@@ -7,7 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Switch_Cameras : MonoBehaviour
 {
@@ -18,7 +18,6 @@ public class Switch_Cameras : MonoBehaviour
     public AutoMove automove1;
     public AutoMove automove2;
     public AutoMove automove3;
-
 
     // Start is called before the first frame update
     void Start()
@@ -77,13 +76,22 @@ public class Switch_Cameras : MonoBehaviour
             {
                 automove1.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
             }
-            if (currentCamera == 2)
-            {
-                automove2.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
-            }
+            //if (currentCamera == 2)
+            //{
+                //automove2.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
+            //}
             if (currentCamera == 3)
             {
                 automove3.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
+            }
+
+            //for mini game 2
+            if (currentCamera == 2)
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                  SceneManager.LoadScene("game_2");
+                }
             }
         }
     }
