@@ -7,7 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Switch_Cameras : MonoBehaviour
 {
@@ -16,7 +16,6 @@ public class Switch_Cameras : MonoBehaviour
 
     //added by jisoo
     public AutoMove automove;
-
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +75,14 @@ public class Switch_Cameras : MonoBehaviour
                 automove.changeScene |= Input.GetKeyDown(KeyCode.UpArrow);
             }
 
+            //for mini game 2
+            if (currentCamera == 2)
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                  SceneManager.LoadScene("game_2");
+                }
+            }
         }
     }
 }

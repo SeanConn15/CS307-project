@@ -17,6 +17,7 @@ TagManager:
   - TP
   - music
   - Jumper
+  - floor
   layers:
   - Default
   - TransparentFX

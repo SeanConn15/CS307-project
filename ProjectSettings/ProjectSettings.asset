@@ -601,7 +601,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 1
+    Collab: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -621,12 +621,12 @@ PlayerSettings:
   facebookStatus: 1
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
-  apiCompatibilityLevel: 6
-  cloudProjectId: 0e1e5ca7-83d9-4b17-bb65-e424d0ae0c7b
+  apiCompatibilityLevel: 3
+  cloudProjectId: bf58c9f8-95bb-40be-8923-a51db394ab0c
   framebufferDepthMemorylessMode: 0
   projectName: CS307-Team29
   organizationId: brucehrwang
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
-  legacyClampBlendShapeWeights: 0
+  legacyClampBlendShapeWeights: 1
