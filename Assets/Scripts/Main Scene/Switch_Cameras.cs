@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Switch_Cameras : MonoBehaviour
 {
     public Camera[] cameraList;
@@ -86,13 +87,15 @@ public class Switch_Cameras : MonoBehaviour
             }
 
             //for mini game 2
-            if (currentCamera == 2)
-            {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                  SceneManager.LoadScene("game_2");
-                }
-            }
+           if (currentCamera == 2)
+           {
+               if (Input.GetKeyDown(KeyCode.UpArrow))
+               {
+                 SceneManager.LoadScene("game_2");
+               }
+           }
+
+
         }
     }
 }
