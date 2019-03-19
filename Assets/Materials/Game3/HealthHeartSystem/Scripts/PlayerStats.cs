@@ -3,6 +3,7 @@
  */
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -43,6 +44,9 @@ public class PlayerStats : MonoBehaviour
     {
         health -= dmg;
         ClampHealth();
+        if(health == 0){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void AddHealth()
