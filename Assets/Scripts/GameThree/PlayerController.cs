@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
 Author: Xingyu Wang
@@ -109,6 +110,14 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("damage"))
         {   
             stats.TakeDamage(1);
+        }
+        if (other.gameObject.CompareTag("portal"))
+        {   
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (other.gameObject.CompareTag("MainPortal"))
+        {   
+            SceneManager.LoadScene(3);
         }
     }
 }

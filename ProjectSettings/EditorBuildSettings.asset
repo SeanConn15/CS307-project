@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Two/Game Two.unity
     guid: be3917f5171953a43b1ae08065c0f3ac
   - enabled: 1
-    path: Assets/Scenes/Game Three/Game Three.unity
-    guid: 1ef7768b898b44f40afcf8c55d852717
+    path: Assets/Scenes/Game Three/Forest.unity
+    guid: 68393ce104a5e421e94fb0e92a0ff59c
+  - enabled: 1
+    path: Assets/Scenes/Game Three/Room.unity
+    guid: 8cd953b8434f74bbb95684d0255b9f05
   m_configObjects: {}
