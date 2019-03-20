@@ -1,3 +1,6 @@
+//Author: Haoran Wang
+//Purpose: Player will die if they fall off the map
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +50,12 @@ public class GameLogic : MonoBehaviour
           fallText.text = "You are so Dead!!";
           StartCoroutine(LoadAfterDelay("game_2"));
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+          Application.LoadLevel("game_2");
+        }
+
     }
 
 }

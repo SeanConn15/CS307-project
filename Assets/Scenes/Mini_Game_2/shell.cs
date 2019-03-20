@@ -1,3 +1,6 @@
+//Author: Haoran Wang
+//Purpose: Player will get vision blocked if they run into shell
+
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

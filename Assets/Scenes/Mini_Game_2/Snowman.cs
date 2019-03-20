@@ -1,3 +1,6 @@
+//Author: Haoran Wang
+//Purpose: Player will die instantly if they run into snowman
+
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
