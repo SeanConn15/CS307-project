@@ -14,6 +14,12 @@ public class Reverse : MonoBehaviour
 
     public Text reverseText;
 
+
+    IEnumerator AfterDelay(){
+         yield return new WaitForSeconds(2.0f);
+         reverseText.text = "";
+     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +36,9 @@ public class Reverse : MonoBehaviour
           Debug.Log("in");
           Player.transform.Rotate(0,-180,0,Space.World);
           Radius = 0;
-          reverseText.text = "Wrong Way! mofo";
-          Destroy(reverseText, 3.0f);
+          reverseText.text = "Wrong Way!";
+          //Destroy(reverseText, 3.0f);
+          StartCoroutine(AfterDelay());
       }
     }
 }

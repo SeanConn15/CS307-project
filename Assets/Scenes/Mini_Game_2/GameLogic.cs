@@ -47,14 +47,16 @@ public class GameLogic : MonoBehaviour
 
         if (isGrounded == false)
         {
-          fallText.text = "You are so Dead!!";
+          fallText.text = "You are Dead!";
           StartCoroutine(LoadAfterDelay("game_2"));
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.R))
         {
           Application.LoadLevel("game_2");
         }
+        */
 
     }
 

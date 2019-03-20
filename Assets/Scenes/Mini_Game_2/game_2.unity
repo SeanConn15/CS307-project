@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34638622, g: 0.5657043, b: 0.8694268, a: 1}
+  m_IndirectSpecularColor: {r: 0.3528312, g: 0.57363266, b: 0.86866486, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -461,7 +461,6 @@ GameObject:
   - component: {fileID: 22393140}
   - component: {fileID: 22393139}
   - component: {fileID: 22393138}
-  - component: {fileID: 22393137}
   - component: {fileID: 22393136}
   m_Layer: 0
   m_Name: shell (2)
@@ -499,19 +498,6 @@ MonoBehaviour:
   Player: {fileID: 5643498433462396498}
   Radius: 4
   shellCam: {fileID: 781745462}
---- !u!65 &22393137
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22393134}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.88583386, y: 0.13308567, z: 0.8107803}
-  m_Center: {x: -0.00073818595, y: -0.023201648, z: -0.39594543}
 --- !u!114 &22393138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,7 +1312,6 @@ GameObject:
   - component: {fileID: 90533627}
   - component: {fileID: 90533626}
   - component: {fileID: 90533625}
-  - component: {fileID: 90533624}
   - component: {fileID: 90533623}
   m_Layer: 0
   m_Name: shell (1)
@@ -1364,19 +1349,6 @@ MonoBehaviour:
   Player: {fileID: 5643498433462396498}
   Radius: 4
   shellCam: {fileID: 781745462}
---- !u!65 &90533624
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90533621}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.88583386, y: 0.13308567, z: 0.8107803}
-  m_Center: {x: -0.00073818595, y: -0.023201648, z: -0.39594543}
 --- !u!114 &90533625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2245,7 +2217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &152839605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5450,7 +5422,6 @@ GameObject:
   - component: {fileID: 422250034}
   - component: {fileID: 422250033}
   - component: {fileID: 422250032}
-  - component: {fileID: 422250031}
   - component: {fileID: 422250030}
   m_Layer: 0
   m_Name: shell (4)
@@ -5488,19 +5459,6 @@ MonoBehaviour:
   Player: {fileID: 5643498433462396498}
   Radius: 4
   shellCam: {fileID: 781745462}
---- !u!65 &422250031
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422250028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.88583386, y: 0.13308567, z: 0.8107803}
-  m_Center: {x: -0.00073818595, y: -0.023201648, z: -0.39594543}
 --- !u!114 &422250032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13222,7 +13180,6 @@ GameObject:
   - component: {fileID: 990002337}
   - component: {fileID: 990002336}
   - component: {fileID: 990002335}
-  - component: {fileID: 990002334}
   - component: {fileID: 990002333}
   m_Layer: 0
   m_Name: shell (3)
@@ -13260,19 +13217,6 @@ MonoBehaviour:
   Player: {fileID: 5643498433462396498}
   Radius: 4
   shellCam: {fileID: 781745462}
---- !u!65 &990002334
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990002331}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.88583386, y: 0.13308567, z: 0.8107803}
-  m_Center: {x: -0.00073818595, y: -0.023201648, z: -0.39594543}
 --- !u!114 &990002335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16371,7 +16315,6 @@ GameObject:
   - component: {fileID: 1133185186}
   - component: {fileID: 1133185185}
   - component: {fileID: 1133185184}
-  - component: {fileID: 1133185183}
   - component: {fileID: 1133185182}
   m_Layer: 0
   m_Name: shell (6)
@@ -16409,19 +16352,6 @@ MonoBehaviour:
   Player: {fileID: 5643498433462396498}
   Radius: 4
   shellCam: {fileID: 781745462}
---- !u!65 &1133185183
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133185180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.88583386, y: 0.13308567, z: 0.8107803}
-  m_Center: {x: -0.00073818595, y: -0.023201648, z: -0.39594543}
 --- !u!114 &1133185184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18349,7 +18279,6 @@ GameObject:
   - component: {fileID: 1255522623}
   - component: {fileID: 1255522622}
   - component: {fileID: 1255522621}
-  - component: {fileID: 1255522620}
   - component: {fileID: 1255522619}
   m_Layer: 0
   m_Name: shell (7)
@@ -18387,19 +18316,6 @@ MonoBehaviour:
   Player: {fileID: 5643498433462396498}
   Radius: 4
   shellCam: {fileID: 781745462}
---- !u!65 &1255522620
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255522617}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.88583386, y: 0.13308567, z: 0.8107803}
-  m_Center: {x: -0.00073818595, y: -0.023201648, z: -0.39594543}
 --- !u!114 &1255522621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36549,7 +36465,6 @@ GameObject:
   - component: {fileID: 2120020184}
   - component: {fileID: 2120020183}
   - component: {fileID: 2120020182}
-  - component: {fileID: 2120020181}
   - component: {fileID: 2120020180}
   m_Layer: 0
   m_Name: shell (5)
@@ -36587,19 +36502,6 @@ MonoBehaviour:
   Player: {fileID: 5643498433462396498}
   Radius: 4
   shellCam: {fileID: 781745462}
---- !u!65 &2120020181
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120020178}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.88583386, y: 0.13308567, z: 0.8107803}
-  m_Center: {x: -0.00073818595, y: -0.023201648, z: -0.39594543}
 --- !u!114 &2120020182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37192,7 +37094,6 @@ GameObject:
   - component: {fileID: 851213501160989787}
   - component: {fileID: 851213501159892635}
   - component: {fileID: 851213501157636174}
-  - component: {fileID: 851213501157636175}
   - component: {fileID: 851213501157636176}
   m_Layer: 0
   m_Name: shell
@@ -37213,19 +37114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6173ef396c248ce8572e331426b2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &851213501157636175
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851213501157636173}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.88583386, y: 0.13308567, z: 0.8107803}
-  m_Center: {x: -0.00073818595, y: -0.023201648, z: -0.39594543}
 --- !u!114 &851213501157636176
 MonoBehaviour:
   m_ObjectHideFlags: 0

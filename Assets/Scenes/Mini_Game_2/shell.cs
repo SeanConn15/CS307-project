@@ -34,13 +34,12 @@ public class shell : MonoBehaviour
       if (dist < Radius)
       {
           shellCam.SetActive(true);
-          Radius = 0;
           shellActive = true;
-      }
 
-      if (shellActive == true)
-      {
-          StartCoroutine(AfterDelay());
+          if (shellActive == true)
+          {
+              StartCoroutine(AfterDelay());
+          }
       }
 
     }

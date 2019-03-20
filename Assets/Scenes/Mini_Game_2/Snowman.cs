@@ -32,7 +32,7 @@ public class Snowman : MonoBehaviour
 
       if (dist < Radius)
       {
-          snowmanText.text = "Snowman! You are Dead AF!";
+          snowmanText.text = "Snowman! You are Dead!";
           StartCoroutine(LoadAfterDelay("game_2"));
       }
     }
