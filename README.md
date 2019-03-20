@@ -1,3 +1,5 @@
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
 # **CS 307, Spring 2019, Team 29**
 **Authors:**
 
