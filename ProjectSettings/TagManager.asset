@@ -25,6 +25,13 @@ TagManager:
   - damage
   - floor
   - Coin
+  - Iteam2
+  - QUIT
+  - REPLAY
+  - RESUME
+  - MAIN
+  - PickUp
+  - att
   layers:
   - Default
   - TransparentFX
