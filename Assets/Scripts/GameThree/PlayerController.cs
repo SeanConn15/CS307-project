@@ -11,6 +11,7 @@ Player Controller
 public class PlayerController : MonoBehaviour
 {
     public PlayerStats stats;
+    public GameObject att;
     float speed = 8f;
     float rotation_speed = 3f;
     float gravity = 27f;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private const string key_isDead = "IsDead";
 
     public int count = 0;
+    public int count2 = 1;
 
     Vector3 moveDirection = Vector3.zero;
     CharacterController controller;     // Character Controller Object, provided by Unity
@@ -69,10 +71,20 @@ public class PlayerController : MonoBehaviour
     { 
         if (controller.isGrounded) 
         {
-            if (Input.GetKeyDown(KeyCode.X)) 
-                this.animator.SetBool(key_isAttack01, true);
-            else 
-                this.animator.SetBool(key_isAttack01, false);
+            if (Input.GetKeyDown(KeyCode.X)) {
+                RaycastHit ack;
+                if(Physics.Raycast(att.transform.position, att.transform.forward, out ack, 10)){
+                    if(ack.transform.tag == "Enemy"){
+                        count2--;
+                        Debug.Log("asdasd" + count2);
+                        ack.transform.gameObject.SetActive(false);
+                    }
+                }
+                this.animator.SetBool(key_isAttack01, true);      
+            }
+            else {
+                this.animator.SetBool(key_isAttack01, false); 
+            }
         }
     }
 
@@ -127,9 +139,5 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             stats.Heal(1);
         }
-    }
-    void OnTriggerExit(Collider other)
-    {
-        
     }
 }

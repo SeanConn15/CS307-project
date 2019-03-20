@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour {
     public PlayerController p;
+    public int mode;
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
     [System.Serializable]
     public class Wave
@@ -48,14 +49,27 @@ public class WaveSpawner : MonoBehaviour {
     {
         if (state == SpawnState.WAITING)
         {
-            if (!EnemyIsAlive())
-            {
-                WaveCompleted();
-            }
+            if(mode == 0){
+                if (!EnemyIsAlive())
+                {
+                    WaveCompleted();
+                }
             
-            else
-            {
-                return;
+                else
+                {
+                    return;
+                }
+            }
+            if(mode == 1){
+                if (!EnemyIsAlive2())
+                {
+                    WaveCompleted();
+                }
+            
+                else
+                {
+                    return;
+                }
             }
         }
         if (waveCountdown <= 0)
@@ -90,11 +104,9 @@ public class WaveSpawner : MonoBehaviour {
     bool EnemyIsAlive()
     {
        searchCountdown -= Time.deltaTime;
-        //if (Time.deltaTime <= searchCountdown)
         if (searchCountdown <= 0f)
         {
             searchCountdown = 1f;
-            // if (GameObject.FindGameObjectWithTag("Enemy") == null)
             if (p.count > coo)
             {
                 coo = coo + 3;
@@ -103,7 +115,26 @@ public class WaveSpawner : MonoBehaviour {
         }
         else
         {
-           // searchCountdown += 10f;
+            return true;
+        }
+        return true;
+    }
+    bool EnemyIsAlive2()
+    {
+       searchCountdown -= Time.deltaTime;
+        if (searchCountdown <= 0f)
+        {
+            searchCountdown = 1f;
+            Debug.Log(p.count2);
+            if (p.count2 <= 0)
+            {
+                
+                p.count2 = 1;
+                return false;
+            }
+        }
+        else
+        {
             return true;
         }
         return true;
@@ -118,35 +149,9 @@ public class WaveSpawner : MonoBehaviour {
            SpawnEnemy(_wave.enemy);
            yield return new WaitForSeconds(1f / _wave.rate);
        }
-
-       /*
-   while (true)
-   {
-       SpawnEnemy(_wave.enemy);
-            if (_wave.iteamrate < c)
-            {
-                if (jump > 2)
-                {
-                    SpawnIteam(_wave.iteam2);
-                    jump = 0;
-                }
-                else
-                {
-                    SpawnIteam(_wave.iteam);
-                }
-
-                jump++;
-                c = 0;
-            }
-            c++;
-       yield return new WaitForSeconds(1f / _wave.rate);
-   }
-   */
-  
         state = SpawnState.WAITING;
         yield break;
     }
-    //void SpawnEnemy(Transform _enemy)
 
     void SpawnEnemy(GameObject _enemy)
     {
@@ -155,13 +160,4 @@ public class WaveSpawner : MonoBehaviour {
         GameObject _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Instantiate(_enemy, _sp.transform.position, _sp.transform.rotation);
     }
-    /*
-    void SpawnIteam(GameObject _iteam)
-    {
-        Debug.Log("Spwaning iteam: " + _iteam.name);
-        _iteam.SetActive(true);
-        GameObject _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(_iteam, _sp.transform.position, _sp.transform.rotation);
-    }
-    */
 }

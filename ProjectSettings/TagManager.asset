@@ -29,6 +29,7 @@ TagManager:
   - RESUME
   - MAIN
   - PickUp
+  - att
   layers:
   - Default
   - TransparentFX
