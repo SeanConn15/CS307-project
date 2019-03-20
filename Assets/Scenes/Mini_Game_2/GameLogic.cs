@@ -34,7 +34,7 @@ public class GameLogic : MonoBehaviour
       || Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, 1000.0f)
       )
       {
-          Debug.Log("floor");
+          //Debug.Log("floor");
           isGrounded = true;
       }
       else
