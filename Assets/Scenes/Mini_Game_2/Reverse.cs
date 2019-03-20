@@ -1,3 +1,6 @@
+//Author: Haoran Wang
+//Purpose: Player will rotate 180 degree if they run into reverse prop
+
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
