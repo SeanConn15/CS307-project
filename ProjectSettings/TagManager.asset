@@ -23,6 +23,12 @@ TagManager:
   - Waypoint
   - Destructible
   - damage
+  - Iteam2
+  - QUIT
+  - REPLAY
+  - RESUME
+  - MAIN
+  - PickUp
   layers:
   - Default
   - TransparentFX

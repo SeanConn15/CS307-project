@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private const string key_isDamage = "IsDamage";
     private const string key_isDead = "IsDead";
 
+    public int count = 0;
+
     Vector3 moveDirection = Vector3.zero;
     CharacterController controller;     // Character Controller Object, provided by Unity
     Animator animator;
@@ -119,5 +121,15 @@ public class PlayerController : MonoBehaviour
         {   
             SceneManager.LoadScene(3);
         }
+        if (other.gameObject.CompareTag("PickUp") && stats.Health != stats.MaxHealth)
+        {  
+            count++;
+            other.gameObject.SetActive(false);
+            stats.Heal(1);
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        
     }
 }
