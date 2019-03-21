@@ -24,9 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Mini_Game_2/game_2.unity
     guid: d13b002d0a1934f87a237c810bfce03a
   - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
     path: Assets/Scenes/Mini_Game_2/game_2.unity
     guid: d13b002d0a1934f87a237c810bfce03a
   - enabled: 1
