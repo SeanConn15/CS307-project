@@ -14,8 +14,8 @@ public class converyor_logic : MonoBehaviour
     {
 
         //Debug.Log("converyor belt force");
-        other.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
-
+        //other.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+        other.transform.Translate(Vector3.left * Time.deltaTime);
     }
     // Update is called once per frame
     void Update()
@@ -23,6 +23,6 @@ public class converyor_logic : MonoBehaviour
         //get the third child component of this object (the texture on the top of the conveyor)
         //and set it's texture offset to move foreward using time as a modulus
         //the speed of the texture and player movement dont line up completely, so I eyeballed it
-        this.transform.GetChild(2).GetComponent<Renderer>().material.mainTextureOffset = new Vector2(0, (Time.time * speed/9));
+        //this.transform.GetChild(2).GetComponent<Renderer>().material.mainTextureOffset = new Vector2(0, (Time.time * speed/9));
     }
 }

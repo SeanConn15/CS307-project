@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     public int count = 0;
     public int count2 = 1;
 
+    private bool isOnConveyor = false;
+    private Collider conveyor; //used to keep track of the conveyor's direction
+
     Vector3 moveDirection = Vector3.zero;
     CharacterController controller;     // Character Controller Object, provided by Unity
     Animator animator;
@@ -107,11 +110,20 @@ public class PlayerController : MonoBehaviour
         if (controller.isGrounded) 
         {
             move();
+            if (isOnConveyor)
+            {
+                moveDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
+                
 
-            moveDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
-            moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
-
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection += conveyor.transform.forward / -3;
+                moveDirection *= speed;
+            }
+            else { 
+                moveDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection *= speed;
+            }
             jump();
         }
 
@@ -139,5 +151,26 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             stats.Heal(1);
         }
+        if (other.gameObject.CompareTag("conveyor"))
+        {
+            isOnConveyor = true;
+            conveyor = other;
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("conveyor"))
+        {
+            isOnConveyor = true;
+            conveyor = other;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("conveyor"))
+        {
+            isOnConveyor = false;
+        }
+
     }
 }
