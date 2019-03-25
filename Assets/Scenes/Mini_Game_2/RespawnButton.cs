@@ -21,6 +21,7 @@ public class RespawnButton : MonoBehaviour
     public void OnRespawnClicked()
     {
         Debug.Log("RESPAWN");
+        CoinTextScript.coinCount = 0;
         SceneManager.LoadScene("game_2");
     }
 }
