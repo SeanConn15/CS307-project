@@ -33,6 +33,9 @@ TagManager:
   - PickUp
   - att
   - conveyor
+  - Teleport
+  - room
+  - PortalTo7
   layers:
   - Default
   - TransparentFX

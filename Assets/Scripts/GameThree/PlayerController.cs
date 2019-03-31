@@ -155,6 +155,14 @@ public class PlayerController : MonoBehaviour
         {
             isOnConveyor = true;
             conveyor = other;
+        } 
+        if (other.gameObject.CompareTag("Teleport"))
+        {
+            SceneManager.LoadScene(8);
+        }
+        if (other.gameObject.CompareTag("room"))
+        {
+            SceneManager.LoadScene(9);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -172,5 +180,12 @@ public class PlayerController : MonoBehaviour
             isOnConveyor = false;
         }
 
+    }
+    void OnCollisionEnter(Collision collision){
+        
+        if (collision.gameObject.CompareTag("MainPortal"))
+        {   
+            SceneManager.LoadScene(3);
+        }
     }
 }
