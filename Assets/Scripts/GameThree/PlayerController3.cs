@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using ttm;
 
 /*
 Author: Jisoo Cha
@@ -144,9 +145,9 @@ public class PlayerController3 : MonoBehaviour
 
     }
     void OnCollisionEnter(Collision collision){
-        Debug.Log("asd");
         if (collision.gameObject.CompareTag("PortalTo7"))
         {   
+            TeleportToMain.portal1 = true;
             SceneManager.LoadScene(7);
         }
     }

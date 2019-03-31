@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
     {
         attack();
         movement();
-
     }
 
     private void jump()
