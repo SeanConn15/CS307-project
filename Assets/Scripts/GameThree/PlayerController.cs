@@ -163,6 +163,10 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(9);
         }
+        else if (other.gameObject.CompareTag("room1"))
+        {
+            SceneManager.LoadScene("Room1");
+        }
     }
     private void OnTriggerStay(Collider other)
     {
