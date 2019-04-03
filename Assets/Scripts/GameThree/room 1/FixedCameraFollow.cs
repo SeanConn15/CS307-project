@@ -12,6 +12,12 @@ public class FixedCameraFollow : MonoBehaviour
     public float offsetY;
     public float zPos;
 
+    private void Start()
+    {
+        Vector3 desiredPosition = new Vector3(target.position.x + offsetX, offsetY, zPos);
+
+        transform.position = desiredPosition;
+    }
     void FixedUpdate()
     {
         Vector3 desiredPosition = new Vector3(target.position.x + offsetX, offsetY, zPos);
