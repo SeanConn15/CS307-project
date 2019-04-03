@@ -36,7 +36,7 @@ TagManager:
   - Teleport
   - room
   - PortalTo7
-  - room2
+  - room1
   layers:
   - Default
   - TransparentFX

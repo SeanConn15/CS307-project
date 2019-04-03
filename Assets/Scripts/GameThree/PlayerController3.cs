@@ -88,7 +88,7 @@ public class PlayerController3 : MonoBehaviour
     {
         if (controller.isGrounded)
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
                 this.animator.SetBool(key_isRun, true);
             else 
                 this.animator.SetBool(key_isRun, false);
@@ -101,6 +101,7 @@ public class PlayerController3 : MonoBehaviour
         if (controller.isGrounded) 
         {
             move();
+            
             if (isOnConveyor)
             {
                 moveDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
