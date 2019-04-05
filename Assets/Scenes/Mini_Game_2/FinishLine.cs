@@ -29,8 +29,8 @@ public class FinishLine : MonoBehaviour
 
       if (dist < Radius)
       {
-          finishText.text = "Good Job! You made it!";
-          StartCoroutine(LoadAfterDelay("Main Scene"));
+          finishText.text = "Good Job! Here is your final challenge!";
+          StartCoroutine(LoadAfterDelay("Transition"));
       }
     }
 }
