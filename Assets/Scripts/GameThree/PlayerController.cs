@@ -155,12 +155,19 @@ public class PlayerController : MonoBehaviour
             isOnConveyor = true;
             conveyor = other;
         } 
+        if (other.gameObject.CompareTag("PortalTo7"))
+        {
+            Debug.Log(7);
+            SceneManager.LoadScene(7);
+        }
         if (other.gameObject.CompareTag("Teleport"))
         {
+            Debug.Log(8);
             SceneManager.LoadScene(8);
         }
         if (other.gameObject.CompareTag("room"))
         {
+            Debug.Log(9);
             SceneManager.LoadScene(9);
         }
         else if (other.gameObject.CompareTag("room1"))

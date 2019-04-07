@@ -146,10 +146,10 @@ public class PlayerController3 : MonoBehaviour
 
     }
     void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.CompareTag("PortalTo7"))
+        if (collision.gameObject.CompareTag("Teleport"))
         {   
             TeleportToMain.portal1 = true;
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(8);
         }
     }
 }
