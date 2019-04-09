@@ -53,6 +53,18 @@ public class CannonLogic : MonoBehaviour
     void Update()
     {
 
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        aimAndFire();
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        aimAndFire();
+    }
+    private void aimAndFire()
+    {
         //if in range, rotate the cannon closer
         if (Vector3.Distance(cannon_position, player.transform.position) <= range)
         {
@@ -65,7 +77,7 @@ public class CannonLogic : MonoBehaviour
             barrel.rotation = Quaternion.Slerp(barrel.rotation, targetRotation, Mathf.Min(reaction_speed * Time.deltaTime, 1));//rotate towards it smoothly
 
             //checking whether or not to fire, every one second max and only if you are pointed close enough to the player
-            if (Time.time - lastFire >= 1 && 
+            if (Time.time - lastFire >= 1 &&
                 Vector3.Dot((player.transform.position - cannon_position).normalized, barrel.forward) > .95)
             {
                 lastFire = Time.time; //reset cooldown

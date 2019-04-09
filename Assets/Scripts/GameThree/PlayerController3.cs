@@ -108,7 +108,7 @@ public class PlayerController3 : MonoBehaviour
                 
 
                 moveDirection = transform.TransformDirection(moveDirection);
-                moveDirection += conveyor.transform.forward / -3;
+                moveDirection += (conveyor.transform.forward) * -0.8f;
                 moveDirection *= speed;
             }
             else { 
@@ -128,7 +128,7 @@ public class PlayerController3 : MonoBehaviour
         if (other.gameObject.CompareTag("damage"))
         {   
         }
-        if(other.gameObject.CompareTag("cannonball"))//if you got hit by a cannonball
+        if (other.gameObject.CompareTag("cannonball"))//if you got hit by a cannonball
         {
             
             if (other.GetComponent<Rigidbody>().velocity.magnitude > 4) //if the cannonball is still moving
