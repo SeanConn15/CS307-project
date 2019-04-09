@@ -128,6 +128,15 @@ public class PlayerController3 : MonoBehaviour
         if (other.gameObject.CompareTag("damage"))
         {   
         }
+        if(other.gameObject.CompareTag("cannonball"))//if you got hit by a cannonball
+        {
+            
+            if (other.GetComponent<Rigidbody>().velocity.magnitude > 4) //if the cannonball is still moving
+            {
+                Debug.Log("ouch!");
+                Application.LoadLevel(Application.loadedLevel); //reload the level
+            }
+        }
     }
     private void OnTriggerStay(Collider other)
     {

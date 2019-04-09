@@ -37,6 +37,7 @@ TagManager:
   - room
   - PortalTo7
   - room1
+  - cannonball
   layers:
   - Default
   - TransparentFX
