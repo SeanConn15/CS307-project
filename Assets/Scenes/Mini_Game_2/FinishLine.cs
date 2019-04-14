@@ -1,4 +1,7 @@
-﻿using System.Collections;
+//Author: Haoran Wang
+//Purpose: Transfer game to a new scene
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
