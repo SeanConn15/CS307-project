@@ -38,6 +38,7 @@ TagManager:
   - PortalTo7
   - room1
   - cannonball
+  - blade
   layers:
   - Default
   - TransparentFX

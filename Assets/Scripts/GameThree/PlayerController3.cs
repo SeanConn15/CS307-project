@@ -11,6 +11,7 @@ Player Controller
 
 public class PlayerController3 : MonoBehaviour
 {
+    public PlayerStats stats;
     float speed = 8f;
     float rotation_speed = 3f;
     float gravity = 27f;
@@ -125,12 +126,18 @@ public class PlayerController3 : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("damage"))
+        if (other.gameObject.CompareTag("Check2"))
         {   
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (other.gameObject.CompareTag("PickUp") && stats.Health != stats.MaxHealth)
+        {  
+            count++;
+            other.gameObject.SetActive(false);
+            stats.Heal(1);
         }
         if (other.gameObject.CompareTag("cannonball"))//if you got hit by a cannonball
         {
-            
             if (other.GetComponent<Rigidbody>().velocity.magnitude > 4) //if the cannonball is still moving
             {
                 Debug.Log("ouch!");
@@ -159,6 +166,10 @@ public class PlayerController3 : MonoBehaviour
         {   
             TeleportToMain.portal1 = true;
             SceneManager.LoadScene(8);
+        }
+        if (collision.gameObject.CompareTag("blade"))
+        {   
+            stats.TakeDamage(1);
         }
     }
 }
