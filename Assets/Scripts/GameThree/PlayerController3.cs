@@ -16,7 +16,7 @@ public class PlayerController3 : MonoBehaviour
     float rotation_speed = 3f;
     float gravity = 27f;
     float rotation = 0f;
-    float jump_speed = 10f;
+    float jump_speed = 15f;
 
     private const string key_isRun = "IsRun";
     private const string key_isAttack01 = "IsAttack01";
