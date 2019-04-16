@@ -3978,6 +3978,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountDownTime: {fileID: 257366693}
   timeLimit: 10
+  Radius: 2
+  Canvas1: {fileID: 772716668}
+  Player: {fileID: 1278338579}
+  Exit: {fileID: 1742780116}
 --- !u!1001 &1588615063
 PrefabInstance:
   m_ObjectHideFlags: 0
