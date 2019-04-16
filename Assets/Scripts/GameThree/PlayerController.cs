@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
                 
 
                 moveDirection = transform.TransformDirection(moveDirection);
-                moveDirection += conveyor.transform.forward / -3;
+                moveDirection += conveyor.transform.forward / -1;
                 moveDirection *= speed;
             }
             else { 

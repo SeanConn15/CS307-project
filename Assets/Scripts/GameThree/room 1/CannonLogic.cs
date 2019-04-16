@@ -52,23 +52,20 @@ public class CannonLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+        
     }
     private void OnTriggerEnter(Collider other)
     {
-        aimAndFire();
+        if (other.name == "Player")
+            aimAndFire();
     }
     private void OnTriggerStay(Collider other)
     {
-        aimAndFire();
+        if(other.name == "Player")
+            aimAndFire();
     }
     private void aimAndFire()
     {
-        //if in range, rotate the cannon closer
-        if (Vector3.Distance(cannon_position, player.transform.position) <= range)
-        {
-
             targetRotation = Quaternion.LookRotation((player.transform.position - barrel.position).normalized); //find angle looks directly at the player
 
             targetRotation.x = 0; //keep the cannon level
@@ -89,7 +86,5 @@ public class CannonLogic : MonoBehaviour
                 //give it a force
                 ballobj.GetComponent<Rigidbody>().AddForce(barrel.forward * 1000);
             }
-
-        }
     }
 }
