@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4482473, g: 0.49827415, b: 0.5755838, a: 1}
+  m_IndirectSpecularColor: {r: 0.44824785, g: 0.4982745, b: 0.5755849, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4946,7 +4946,7 @@ GameObject:
   - component: {fileID: 312517210}
   m_Layer: 0
   m_Name: Teleport
-  m_TagString: PortalTo7
+  m_TagString: room3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16956,8 +16956,9 @@ Transform:
   - {fileID: 309754896}
   - {fileID: 1858474490}
   - {fileID: 1709226708}
-  - {fileID: 1525119029}
   - {fileID: 1800318010}
+  - {fileID: 1525119029}
+  - {fileID: 1491939841}
   - {fileID: 676520213}
   - {fileID: 1465288326}
   - {fileID: 2042467207}
@@ -16966,7 +16967,6 @@ Transform:
   - {fileID: 324390500}
   - {fileID: 935484964}
   - {fileID: 1167249988}
-  - {fileID: 1491939841}
   - {fileID: 453536246}
   - {fileID: 1389862216}
   - {fileID: 626176761}

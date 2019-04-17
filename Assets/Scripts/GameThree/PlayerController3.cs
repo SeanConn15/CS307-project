@@ -11,6 +11,7 @@ Player Controller
 
 public class PlayerController3 : MonoBehaviour
 {
+    public GameObject balls;
     public PlayerStats stats;
     float speed = 8f;
     float rotation_speed = 3f;
@@ -126,6 +127,10 @@ public class PlayerController3 : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Teleport"))
+        {   
+            SceneManager.LoadScene(8);
+        }
         if (other.gameObject.CompareTag("Check2"))
         {   
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -143,6 +148,10 @@ public class PlayerController3 : MonoBehaviour
                 Debug.Log("ouch!");
                 Application.LoadLevel(Application.loadedLevel); //reload the level
             }
+        }
+        if (other.gameObject.CompareTag("enter3"))
+        {   
+            balls.gameObject.SetActive(true);
         }
     }
     private void OnTriggerStay(Collider other)

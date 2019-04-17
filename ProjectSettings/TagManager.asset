@@ -39,6 +39,8 @@ TagManager:
   - room1
   - cannonball
   - blade
+  - room3
+  - enter3
   layers:
   - Default
   - TransparentFX

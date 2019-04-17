@@ -157,22 +157,23 @@ public class PlayerController : MonoBehaviour
         } 
         if (other.gameObject.CompareTag("PortalTo7"))
         {
-            Debug.Log(7);
             SceneManager.LoadScene(7);
         }
         if (other.gameObject.CompareTag("Teleport"))
         {
-            Debug.Log(8);
             SceneManager.LoadScene(8);
         }
         if (other.gameObject.CompareTag("room"))
         {
-            Debug.Log(9);
             SceneManager.LoadScene(9);
         }
-        else if (other.gameObject.CompareTag("room1"))
+        if (other.gameObject.CompareTag("room1"))
         {
-            SceneManager.LoadScene("Room1");
+            SceneManager.LoadScene(10);
+        }
+        if (other.gameObject.CompareTag("room3"))
+        {
+            SceneManager.LoadScene(11);
         }
     }
     private void OnTriggerStay(Collider other)
