@@ -11,7 +11,9 @@ Player Controller
 
 public class PlayerController3 : MonoBehaviour
 {
+    public GameObject att;
     public GameObject balls;
+    public GameObject portalto7;
     public PlayerStats stats;
     float speed = 8f;
     float rotation_speed = 3f;
@@ -76,6 +78,13 @@ public class PlayerController3 : MonoBehaviour
         if (controller.isGrounded) 
         {
             if (Input.GetKeyDown(KeyCode.X)) {
+                RaycastHit ack;
+                if(Physics.Raycast(att.transform.position, att.transform.forward, out ack, 2)){
+                    if(ack.transform.tag == "Enemy"){
+                        ack.transform.gameObject.SetActive(false);
+                        portalto7.gameObject.SetActive(true);
+                    }
+                }
                 this.animator.SetBool(key_isAttack01, true);      
             }
             else {
