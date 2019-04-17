@@ -19,6 +19,8 @@ public class CountDown : MonoBehaviour
     public GameObject Player;
     public GameObject Exit;
 
+    public Text gameoverText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,10 +57,17 @@ public class CountDown : MonoBehaviour
         }
     }
 
+    IEnumerator LoadAfterDelay(string levelName){
+       yield return new WaitForSeconds(2.0f);
+       Application.LoadLevel(levelName);
+   }
+
     //IEnumerator Doom()
     void Doom()
     {
         //yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("Final");
+        gameoverText.text = "Run out of time! You are dead!";
+        //SceneManager.LoadScene("Final");
+        StartCoroutine(LoadAfterDelay("Final"));
     }
 }

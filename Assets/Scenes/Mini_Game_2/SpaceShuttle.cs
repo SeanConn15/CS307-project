@@ -11,6 +11,7 @@ public class SpaceShuttle : MonoBehaviour
   public float Radius;
   public GameObject videoPlayer;
   public GameObject audio;
+  //public GameObject zombie;
 
   IEnumerator LoadAfterDelay(string levelName){
        yield return new WaitForSeconds(14.0f);
@@ -33,6 +34,7 @@ public class SpaceShuttle : MonoBehaviour
         Debug.Log("In");
         audio.SetActive(false);
         videoPlayer.SetActive(true);
+        //zombie.SetActive(false);
         StartCoroutine(LoadAfterDelay("Forest"));
     }
   }
