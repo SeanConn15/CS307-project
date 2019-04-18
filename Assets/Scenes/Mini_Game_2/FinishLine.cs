@@ -1,4 +1,7 @@
-﻿using System.Collections;
+//Author: Haoran Wang
+//Purpose: Transfer game to a new scene
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,8 +32,8 @@ public class FinishLine : MonoBehaviour
 
       if (dist < Radius)
       {
-          finishText.text = "Good Job! You made it!";
-          StartCoroutine(LoadAfterDelay("Main Scene"));
+          finishText.text = "Good Job! Here is your final challenge!";
+          StartCoroutine(LoadAfterDelay("Transition"));
       }
     }
 }

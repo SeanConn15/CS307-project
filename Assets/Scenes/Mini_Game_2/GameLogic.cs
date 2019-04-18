@@ -49,6 +49,8 @@ public class GameLogic : MonoBehaviour
         {
           fallText.text = "You are Dead!";
           StartCoroutine(LoadAfterDelay("game_2"));
+            CoinTextScript.coinCount = 0;
+
         }
 
         /*
