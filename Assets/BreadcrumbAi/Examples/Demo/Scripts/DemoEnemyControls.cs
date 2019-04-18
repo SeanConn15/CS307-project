@@ -185,10 +185,10 @@ public class DemoEnemyControls : MonoBehaviour {
 	
 	void UpdateEnemyCount(){
 		if(enemyType == EnemyType.Special){
-			GameObject.Find("Spawners").GetComponent<DemoSpawnerControl>().specialEnemyCount--;
+			//GameObject.Find("Spawners").GetComponent<DemoSpawnerControl>().specialEnemyCount--;
 		}
-		GameObject.Find("Spawners").GetComponent<DemoSpawnerControl>().enemyCount--;
-		Destroy(gameObject);
+		//GameObject.Find("Spawners").GetComponent<DemoSpawnerControl>().enemyCount--;
+		//Destroy(gameObject);
 	}
 	
 	void OnCollisionEnter(Collision col){

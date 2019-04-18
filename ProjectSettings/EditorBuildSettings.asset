@@ -30,12 +30,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Three/Forest.unity
     guid: 68393ce104a5e421e94fb0e92a0ff59c
   - enabled: 1
-    path: Assets/Scenes/Mini_Game_2/Final.unity
-    guid: 5cd25586eab594dfd90ffc494ec93285
-  - enabled: 1
-    path: Assets/Scenes/Game Three/Room.unity
+    path: Assets/Scenes/Game Three/TeleportRoom.unity
     guid: 8cd953b8434f74bbb95684d0255b9f05
   - enabled: 1
-    path: Assets/Scenes/Mini_Game_2/Transition.unity
-    guid: 1eecd420299f24b34b5085d9f8e9e6f5
+    path: Assets/Scenes/Game Three/Teleport.unity
+    guid: e748cac36fb684070aa3d6130ce8f30b
+  - enabled: 1
+    path: Assets/Scenes/Game Three/Room.unity
+    guid: 1c0669becc692c641b6b8a5206dc32b1
+  - enabled: 1
+    path: Assets/Scenes/Game Three/Room1.unity
+    guid: 8095ab72bb50e4ce29745110e41ae6c2
+  - enabled: 1
+    path: Assets/Scenes/Game Three/Room2.unity
+    guid: 919c432ee028546a1898139da7b103e9
   m_configObjects: {}

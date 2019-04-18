@@ -33,6 +33,16 @@ TagManager:
   - PickUp
   - att
   - conveyor
+  - Teleport
+  - room
+  - PortalTo7
+  - room1
+  - cannonball
+  - blade
+  - room3
+  - enter3
+  - portalto100
+  - portalto101
   layers:
   - Default
   - TransparentFX

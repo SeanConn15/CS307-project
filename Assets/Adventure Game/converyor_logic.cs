@@ -13,9 +13,8 @@ public class converyor_logic : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
 
-        //Debug.Log("converyor belt force");
-        //other.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
-        other.transform.Translate(Vector3.left * Time.deltaTime);
+        //this does not effect the player but instead moves other objects
+        other.transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
     // Update is called once per frame
     void Update()
