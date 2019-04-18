@@ -138,7 +138,7 @@ public class PlayerController3 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleport"))
         {   
-            SceneManager.LoadScene(8);
+            SceneManager.LoadScene(9);
         }
         if (other.gameObject.CompareTag("Check2"))
         {   
@@ -165,7 +165,7 @@ public class PlayerController3 : MonoBehaviour
         if (other.gameObject.CompareTag("portalto101"))
         {
             TeleportToMain.portal3 = true;
-            SceneManager.LoadScene(8);
+            SceneManager.LoadScene(9);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -188,7 +188,7 @@ public class PlayerController3 : MonoBehaviour
         if (collision.gameObject.CompareTag("Teleport"))
         {   
             TeleportToMain.portal1 = true;
-            SceneManager.LoadScene(8);
+            SceneManager.LoadScene(9);
         }
         if (collision.gameObject.CompareTag("blade"))
         {   

@@ -164,24 +164,24 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Teleport"))
         {
-            SceneManager.LoadScene(8);
+            SceneManager.LoadScene(9);
         }
         if (other.gameObject.CompareTag("room"))
         {
-            SceneManager.LoadScene(9);
+            SceneManager.LoadScene(10);
         }
         if (other.gameObject.CompareTag("room1"))
         {
-            SceneManager.LoadScene(10);
+            SceneManager.LoadScene(11);
         }
         if (other.gameObject.CompareTag("room3"))
         {
-            SceneManager.LoadScene(11);
+            SceneManager.LoadScene(12);
         }
         if (other.gameObject.CompareTag("portalto100"))
         {
             TeleportToMain.portal2 = true;
-            SceneManager.LoadScene(8);
+            SceneManager.LoadScene(9);
         }
     }
     private void OnTriggerStay(Collider other)
