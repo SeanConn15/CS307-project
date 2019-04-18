@@ -6,9 +6,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Snowman : MonoBehaviour
 {
-
+    
     public GameObject Player;
     public float Radius;
 
@@ -34,6 +35,7 @@ public class Snowman : MonoBehaviour
       {
           snowmanText.text = "Snowman! You are Dead!";
           StartCoroutine(LoadAfterDelay("game_2"));
+            CoinTextScript.coinCount = 0;
       }
     }
 }
