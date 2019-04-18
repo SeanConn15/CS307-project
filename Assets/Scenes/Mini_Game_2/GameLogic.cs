@@ -60,6 +60,11 @@ public class GameLogic : MonoBehaviour
         }
         */
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("Main Scene");
+        }
+
     }
 
 }

@@ -22,6 +22,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("Main Scene"); 
+        }
 
     }
     private void OnTriggerEnter(Collider other)

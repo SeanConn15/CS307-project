@@ -24,6 +24,7 @@ public class Gun : MonoBehaviour {
             Shoot();
         }
     }
+    
 
     void Shoot()
     {
