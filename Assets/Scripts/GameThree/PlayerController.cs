@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using ttm;
 
 /*
 Author: Xingyu Wang
@@ -13,7 +12,6 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerStats stats;
     public GameObject att;
-    public GameObject portal100;
     float speed = 8f;
     float rotation_speed = 3f;
     float gravity = 27f;
@@ -51,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         attack();
         movement();
+
     }
 
     private void jump()
@@ -82,7 +81,6 @@ public class PlayerController : MonoBehaviour
                         count2--;
                         Debug.Log("asdasd" + count2);
                         ack.transform.gameObject.SetActive(false);
-                        portal100.gameObject.SetActive(true);
                     }
                 }
                 this.animator.SetBool(key_isAttack01, true);      
@@ -118,7 +116,7 @@ public class PlayerController : MonoBehaviour
                 
 
                 moveDirection = transform.TransformDirection(moveDirection);
-                moveDirection += conveyor.transform.forward / -1;
+                moveDirection += conveyor.transform.forward / -3;
                 moveDirection *= speed;
             }
             else { 
@@ -157,31 +155,6 @@ public class PlayerController : MonoBehaviour
         {
             isOnConveyor = true;
             conveyor = other;
-        } 
-        if (other.gameObject.CompareTag("PortalTo7"))
-        {
-            SceneManager.LoadScene(7);
-        }
-        if (other.gameObject.CompareTag("Teleport"))
-        {
-            SceneManager.LoadScene(8);
-        }
-        if (other.gameObject.CompareTag("room"))
-        {
-            SceneManager.LoadScene(9);
-        }
-        if (other.gameObject.CompareTag("room1"))
-        {
-            SceneManager.LoadScene(10);
-        }
-        if (other.gameObject.CompareTag("room3"))
-        {
-            SceneManager.LoadScene(11);
-        }
-        if (other.gameObject.CompareTag("portalto100"))
-        {
-            TeleportToMain.portal2 = true;
-            SceneManager.LoadScene(8);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -199,12 +172,5 @@ public class PlayerController : MonoBehaviour
             isOnConveyor = false;
         }
 
-    }
-    void OnCollisionEnter(Collision collision){
-        
-        if (collision.gameObject.CompareTag("MainPortal"))
-        {   
-            SceneManager.LoadScene(3);
-        }
     }
 }
