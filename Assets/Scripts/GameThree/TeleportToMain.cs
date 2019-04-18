@@ -23,7 +23,7 @@ public class TeleportToMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(portal1){
+        if(portal1 && portal2 && portal3){
             MainPortal.gameObject.SetActive(true);
         }
     }

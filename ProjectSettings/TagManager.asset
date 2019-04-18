@@ -41,6 +41,8 @@ TagManager:
   - blade
   - room3
   - enter3
+  - portalto100
+  - portalto101
   layers:
   - Default
   - TransparentFX

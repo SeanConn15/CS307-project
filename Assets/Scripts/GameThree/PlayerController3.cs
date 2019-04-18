@@ -162,6 +162,11 @@ public class PlayerController3 : MonoBehaviour
         {   
             balls.gameObject.SetActive(true);
         }
+        if (other.gameObject.CompareTag("portalto101"))
+        {
+            TeleportToMain.portal3 = true;
+            SceneManager.LoadScene(8);
+        }
     }
     private void OnTriggerStay(Collider other)
     {

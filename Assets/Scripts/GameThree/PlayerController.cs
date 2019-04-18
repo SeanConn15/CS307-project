@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using ttm;
 
 /*
 Author: Xingyu Wang
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerStats stats;
     public GameObject att;
+    public GameObject portal100;
     float speed = 8f;
     float rotation_speed = 3f;
     float gravity = 27f;
@@ -80,6 +82,7 @@ public class PlayerController : MonoBehaviour
                         count2--;
                         Debug.Log("asdasd" + count2);
                         ack.transform.gameObject.SetActive(false);
+                        portal100.gameObject.SetActive(true);
                     }
                 }
                 this.animator.SetBool(key_isAttack01, true);      
@@ -174,6 +177,11 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("room3"))
         {
             SceneManager.LoadScene(11);
+        }
+        if (other.gameObject.CompareTag("portalto100"))
+        {
+            TeleportToMain.portal2 = true;
+            SceneManager.LoadScene(8);
         }
     }
     private void OnTriggerStay(Collider other)
